@@ -1,20 +1,36 @@
-# group7
 
-*rubrics:*  
-*GitHub:*  
-*1. description of the communication protocols : slack, google drive, zoom  
-2. individual branches:checked  
-3. each branch at least has four commits for the 1st segment*
+# group7  
 
-### Communication protocols:  
+## Topic:
+Toronto bike sharing demand prediction.  
+### Reason to select this topic:  
+
+
+### Description of source of data:  
+Bike sharing datasets are downloaded from [link.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data)  
+Weather dataset are scraped from [link.](https://www.wunderground.com/history/monthly/ca/toronto/CYTZ)  
+
+
+### Questions hope to answer:  
+1. How weather conditions affect the demand of bike sharing in Toronto?  
+2. Based on the analysis, come up with some suggestions for business strategy.  
+
+
+## Communication protocols:  
 - Slack
 - google drive
-- email
-- <span style="color:yellow">need to discuss with members</span>  
+- email  
+  
+ ## Machine Learning Model:  
 
-### GitHub branchs:
-Already created four branches for each members.
+ ## Database:  
 
-### 4 commits per branch:
 
-<span style="color:yellow">to be confirmed...</span>  
+ 
+<span style="color:yellow">to be checked...</span>   
+- 4 commits per branch:  
+
+
+ 
+
+
