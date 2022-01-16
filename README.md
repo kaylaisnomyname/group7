@@ -2,16 +2,16 @@
 # Bike Sharing Demand Prediction in Toronto 
 
 ## Overview 
-Bike sharing is a shared transport service using bike on a short term for a price or free. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
+Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
 
-Weather conditions have considerable influence on cycling travel behavior especially in Canada with 4 seasons ( Spring, Summer, Fall and Winter). Our goal in this project is to determine correlation between the difference type of weather with the demand on bike sharing using machine learning. 
+Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to determine correlation(s) between the difference type of weather conditions with the demand on bike sharing using machine learning. 
 
 
 
 ### Project Scope 
-:large_orange_diamond: Location      : For This Project  the location of the data is only in Toronto city 
+:large_orange_diamond: Location      : For This Project is based in Toronto
 
-:large_orange_diamond: Time Range    : The data will take 3 latest years from 1 January 2019 to 31 December 2021 
+:large_orange_diamond: Time Range    : The data will take up to 3 years from 1 January 2019 to 31 December 2021 
 
 
 ### Resources
@@ -39,18 +39,18 @@ Weather conditions have considerable influence on cycling travel behavior especi
 ## Group communication protocols:
 * Through this project, Team member communicated constantly using Slack and Email. Team member also use Google drive to shared project timeline and management.
 * Responsibilities:
-
-  Dana Du       : Manage Repositories, Develop Machine Learning 
   
   Inez Suyono   : Develop Database
   
   Ivan Coelho   : Develop Database
   
-  Shohesh Patel : Develop Machine Learning
+  Shohesh Patel : Develop Machine Learning  
+  
+  X. Dana Du    : Manage Repo, Develop Machine Learning
 
  ## Database
  
- ### Data Collecting and Cleaning
+ ### Data Collecting and Cleaning  
  
  #### :large_orange_diamond: Bike Sharing Data 
  
