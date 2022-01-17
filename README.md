@@ -26,8 +26,9 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 :large_orange_diamond: Language: Python,SQL
 
-:large_orange_diamond: Library : Pandas,glob,os,sklearn
+:large_orange_diamond: Library: Pandas,glob,os,sklearn
 
+:large_orange_diamond: Vizualization: Tableau
 
 
 ### Questions we hope to answer  
@@ -44,7 +45,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   
   Inez Suyono   : ETL, Develop Database
   
-  Ivan Coelho   : Develop Database
+  Ivan Coelho   : Develop Database / Visualization 
   
   Shohesh Patel : Develop Machine Learning  
   
