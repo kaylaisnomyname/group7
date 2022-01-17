@@ -15,6 +15,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 
 ### Resources
+
 #### Data Source
 :large_orange_diamond: Bike Sharing Datasets: Downloaded from an open-source portal CKAN ( [link.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
 
@@ -29,11 +30,12 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 
 
-### Questions we hope to answer:  
+### Questions we hope to answer  
 
 * How weather conditions affect the demand of bike sharing in Toronto?
 * Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
 * Suggestions for next business strategy.  
+* Show the number of bike trips for all riders including annual member and casual member.
 
 
 ## Group communication protocols:
