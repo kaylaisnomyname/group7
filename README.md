@@ -50,6 +50,10 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
  ## Database
  
+  ### Database Planning
+  For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
+ 
+ 
  ### Data Collecting and Cleaning  
  
  #### :large_orange_diamond: Bike Sharing Data 
@@ -158,6 +162,16 @@ This process is merging the weather data set and bike data to get mockup dataset
  
  
  ### ERD 
+
+
+ <p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/149685581-a4f98f93-6fa0-47f9-adfc-d720d1033cef.png"/>
+        
+</p>
+
+<p align="center">
+  <sub>Figure 1 ERD for Bikesharing Database </sub>
+</p>
  
  ## Machine Learning Model  
 
