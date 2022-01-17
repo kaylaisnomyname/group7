@@ -4,19 +4,20 @@
 ## Overview 
 Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
 
-Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to determine correlation(s) between the difference type of weather conditions with the demand on bike sharing using machine learning. 
+Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to create a viable machine learning model to explore possible correlation(s) between the different types of weather conditions and the demand on bike sharing. 
 
 
 
-### Project Scope 
-:large_orange_diamond: Location      : For This Project is based in Toronto
+### Project Scope: 
+:large_orange_diamond: Location      : This Project is based in Toronto
 
-:large_orange_diamond: Time Range    : The data will take up to 3 years from 1 January 2019 to 31 December 2021 
+:large_orange_diamond: Time Range    : 3 years history from 1 January 2019 to 31 December 2021 
 
 
-### Resources
+### Resources:
+
 #### Data Source
-:large_orange_diamond: Bike Sharing Datasets: Downloaded from open data Toronto ( [link.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
+:large_orange_diamond: Bike Sharing Datasets: Downloaded from an open-source portal CKAN ([bike.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
 
 :large_orange_diamond: Weather Datasets: Scraped from Wunderground ( [link.](https://www.wunderground.com/history/monthly/ca/toronto/CYTZ)) and download from Meteostat ([link.](https://meteostat.net/en/station/71624?t=2019-01-01/2021-12-31))
 
@@ -25,57 +26,52 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 :large_orange_diamond: Language: Python,SQL
 
-:large_orange_diamond: Library : Pandas,glob,os,sklearn
+:large_orange_diamond: Library: Pandas,glob,os,sklearn
+
+:large_orange_diamond: Vizualization: Tableau/HTLM/JS
 
 
-
-### Questions we hope to answer:  
+### Questions we hope to answer: 
 
 * How weather conditions affect the demand of bike sharing in Toronto?
-* Which features of weather can better predict the demand of bike sharing in Toronto? 
+* Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
 * Suggestions for next business strategy.  
 
 
-## Group communication protocols:
-* Through this project, Team member communicated constantly using Slack and Email. Team member also use Google drive to shared project timeline and management.
-* Responsibilities:
-  
-  Inez Suyono   : Develop Database
-  
-  Ivan Coelho   : Develop Database
-  
-  Shohesh Patel : Develop Machine Learning  
-  
-  X. Dana Du    : Manage Repo, Develop Machine Learning
 
- ## Database
+## Group communication protocols:
+* Team members communicate via Slack, Email and Google drive.  
+* Responsibilities:
+  - Inez Suyono   : ETL, Develop Database
+  - Ivan Coelho   : Develop Database / Visualization
+  - Shohesh Patel : Develop Machine Learning
+  - Dana Du       : Manage Repo, ETL, Develop Machine Learning
+
  
-  ### Database Planning
-  For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
+ ## Data ETL 
  
- 
- ### Data Collecting and Cleaning  
- 
+ ### Raw data:
  #### :large_orange_diamond: Bike Sharing Data 
- The Bike sharing data is downloaded from open data Toronto.
+ The Bike sharing data is downloaded from CKAN (previously known as open data Toronto).
  
- Features in dataset : 
- Trip Id,Trip  Duration,Start Station Id,Start Time,Start Station Name,End Station Id,End Time,End Station Name,Bike Id,User Type
+ Variables in the dataset : 
+ Trip Id, Trip Duration, Start Station Id, Start Time, Start Station Name, End Station Id, End Time, End Station Name, Bike Id, User Type
  
  #### Clean and Processed Data 
- Data in Bike Sharing need to be processed , so it can be used for the machine Learning , here is the step that we take using pandas  and jupyter notebook:
+ The dataset needs to be preprocessed. The preprocessing steps are:  
  * Combine ALL CSV data
- * Delete NA data
+ * Delete NAN data
  * Add new column Date , converted from Start Time
- * Group data by Date to get counts_trips
- * Group data by date and search unique value on Bikeid to get counts_bike
- * Group data by date and sum trip duration to get trip duration
- * Filter data with user type="Annual Member" and group by date to get  counts_member_annual
- * Filter data with user type=" Casual Member" and group by date to get counts_member_casual
+ * Group by Date to get counts_trips
+ * Group by Date and search unique value on Bikeid to get counts_bike
+ * Group by Date and sum trip duration to get trip duration
+ * Filter with user type="Annual Member" and group by date to get  counts_member_annual
+ * Filter with user type=" Casual Member" and group by date to get counts_member_casual
  * Merge all of the grouping into one dataframe
+ * Export the cleaned bike to csv
  
  
-:inbox_tray: The full process can be seen on this [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
+:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the partial cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
 
  
  #### :large_orange_diamond:  Weather Data
@@ -97,11 +93,10 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
  Metric : Celcius, Kmh, Percentage,hPA
  
- #### Clean Data
- 
- The dataset from wunderground  is not clean , here is the step that we take using pandas  and jupyter notebook :
- * Combine all csv data to one dataframe
- * Substring Year value  to get correct value of the year
+ #### Clean Data:
+ Clean data preprocessing steps are:
+ * Combine csv files to one 
+ * Substring Year value to get correct value of the year
  * Mapping Month from text to number
  * Change metric from Fahrenheit to Celcius and Mph to Kmh
  
@@ -117,13 +112,10 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
   
  
- #### :large_orange_diamond: Merge Weather Dataset with Bike Data
+ ### Clean dataset:
+:large_orange_diamond: Merge Weather Dataset with Bike Data
+Data preprocessing to be continued.
  
-This process is merging the weather data set and bike data to get mockup dataset that we will use for the machine learning. 
-
-
-:inbox_tray: The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on  [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)
-
 
  ### Tables Description 
  
@@ -161,6 +153,16 @@ This process is merging the weather data set and bike data to get mockup dataset
 
  
  
+ ## Machine Learning Model  
+ ** Preliminary test**: Preliminary test was performed using Dec 2021 sample. We use Linear Regression model to check for possible relationships. As the sample data is relatively small, the outcome was not as we predicted. Further details will be filled when the full cleaned dataset is ready. 
+ Next stage will try out different regression models on full cleaned dataset.
+ 
+ ## Database
+ 
+ ### Database Planning
+  For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
+  
+ 
  ### ERD 
 
 
@@ -172,14 +174,10 @@ This process is merging the weather data set and bike data to get mockup dataset
 <p align="center">
   <sub>Figure 1 ERD for Bikesharing Database </sub>
 </p>
- 
- ## Machine Learning Model  
-
-
 
  
+## Dashboard
 
-
- 
+details to be filled in next stage..
 
 
