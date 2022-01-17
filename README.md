@@ -179,7 +179,7 @@ This process is merging the weather data set and bike data to get mockup dataset
  
  ## Machine Learning Model  
 
-
+Create training and test groups from a given data set.
 
  
 
