@@ -177,5 +177,5 @@ Data preprocessing to be continued.
 
  
 ## Dashboard
-to be filled in next stage
+detail to be filled in next stage
 
