@@ -53,6 +53,26 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  ### Data Collecting and Cleaning  
  
  #### :large_orange_diamond: Bike Sharing Data 
+ The Bike sharing data is downloaded from open data Toronto.
+ 
+ Features in dataset : 
+ Trip Id,Trip  Duration,Start Station Id,Start Time,Start Station Name,End Station Id,End Time,End Station Name,Bike Id,User Type
+ 
+ #### Clean and Processed Data 
+ Data in Bike Sharing need to be processed , so it can be used for the machine Learning , here is the step that we take using pandas  and jupyter notebook:
+ * Combine ALL CSV data
+ * Delete NA data
+ * Add new column Date , converted from Start Time
+ * Group data by Date to get counts_trips
+ * Group data by date and search unique value on Bikeid to get counts_bike
+ * Group data by date and sum trip duration to get trip duration
+ * Filter data with user type="Annual Member" and group by date to get  counts_member_annual
+ * Filter data with user type=" Casual Member" and group by date to get counts_member_casual
+ * Merge all of the grouping into one dataframe
+ 
+ 
+:inbox_tray: The full process can be seen on this [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
+
  
  #### :large_orange_diamond:  Weather Data
  The Weather data is coming from two sources: the wonderground website and Meteostat. The data then  will be combined to  get more features on weather data. 
@@ -73,21 +93,32 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
  Metric : Celcius, Kmh, Percentage,hPA
  
- #### Clean and Merge Data
+ #### Clean Data
  
- The dataset from wunderground  is not clean , Here is the step of data cleaning :
+ The dataset from wunderground  is not clean , here is the step that we take using pandas  and jupyter notebook :
  * Combine all csv data to one dataframe
  * Substring Year value  to get correct value of the year
  * Mapping Month from text to number
  * Change metric from Fahrenheit to Celcius and Mph to Kmh
  
- For Meteostat , Here is the step of data cleaning :
+ For Meteostat , here is the step that we take using pandas  and jupyter notebook:
  - Parse Date value to Year, Month and Day and  add it to new column
  - Drop wind speed column because we will take more detailed data from wunderground and tsun column because it doesn't have any value and there is not explanation what the column stands for.
  
  
  The two dataset will be merged by Year, Month and Day to get one full dataset. The result can be seen on tables description --> Tbl_weather_data.
  
+ 
+:inbox_tray: The full process can be seen on [Weather_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on [weather_data_clean.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)
+
+  
+ 
+ #### :large_orange_diamond: Merge Weather Dataset with Bike Data
+ 
+This process is merging the weather data set and bike data to get mockup dataset that we will use for the machine learning. 
+
+
+:inbox_tray: The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on  [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)
 
 
  ### Tables Description 
@@ -95,9 +126,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 #### Tbl_weather_data
 |Field_name|Key|Data Type|Metric|Description|
 |---|---|---|---|---|
-|W_Year|Primary Key|int64||Year of the data|
-|W_Month|Primary Key|int64||Month of the data|
-|W_Day|Primary Key|int64||Day of the data|
+|W_Date|Primary Key|datetime64[ns]||Date|
 |W_Temp_Max|-|float64|Celcius|Maximum Temperature|
 |W_Temp_Avg|-|float64|Celcius|Average Temperature|
 |W_Temp_Min|-|float64|Celcius|Minimum Temperature|
@@ -113,6 +142,20 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 |W_Max_Dp|-|float64|Celcius|Maximum Dew Point|
 |W_Avg_dp|-|float64|Celcius|Average Dew Point|
 |W_Min_Dp|-|float64|Celcius|Minimum Dew Point|
+
+
+
+#### Tbl_bike_data
+|Field_name|Key|Data Type|Metric|Description|
+|---|---|---|---|---|
+|Date |Primary Key|datetime64[ns]||Date|
+|counts_trips|-|int64||Trip counts|
+|counts_Bike|-|int64||count of unique bike id on that date|
+|trip_duration|-|float64||sum of trip duration on that date|
+|counts_member_annual|-|int64||count of trip with annual member type|
+|counts_member_casual|-|int64||count of trip with casual member type|
+
+ 
  
  ### ERD 
  
