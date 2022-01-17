@@ -55,8 +55,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  
   ### Database Planning
   For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
- 
- 
+  
  ### Data Collecting and Cleaning  
  
  #### :large_orange_diamond: Bike Sharing Data 
@@ -162,7 +161,9 @@ This process is merging the weather data set and bike data to get mockup dataset
 |counts_member_annual|-|int64||count of trip with annual member type|
 |counts_member_casual|-|int64||count of trip with casual member type|
 
+ #### Data Visualization 
  
+ Create Visualizations for the Trip Analysis
  
  ### ERD 
 
