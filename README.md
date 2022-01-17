@@ -4,7 +4,7 @@
 ## Overview 
 Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
 
-Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to determine correlation(s) between the difference type of weather conditions with the demand on bike sharing using machine learning. 
+Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to create a viable machine learning model to explore possible correlation(s) between the different types of weather conditions and the demand on bike sharing. 
 
 
 
@@ -16,7 +16,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 ### Resources
 #### Data Source
-:large_orange_diamond: Bike Sharing Datasets: Downloaded from open data Toronto ( [link.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
+:large_orange_diamond: Bike Sharing Datasets: Downloaded from an open-source portal CKAN ( [link.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
 
 :large_orange_diamond: Weather Datasets: Scraped from Wunderground ( [link.](https://www.wunderground.com/history/monthly/ca/toronto/CYTZ)) and download from Meteostat ([link.](https://meteostat.net/en/station/71624?t=2019-01-01/2021-12-31))
 
@@ -32,7 +32,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 ### Questions we hope to answer:  
 
 * How weather conditions affect the demand of bike sharing in Toronto?
-* Which features of weather can better predict the demand of bike sharing in Toronto? 
+* Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
 * Suggestions for next business strategy.  
 
 
@@ -40,13 +40,13 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 * Through this project, Team member communicated constantly using Slack and Email. Team member also use Google drive to shared project timeline and management.
 * Responsibilities:
   
-  Inez Suyono   : Develop Database
+  Inez Suyono   : ETL, Develop Database
   
   Ivan Coelho   : Develop Database
   
   Shohesh Patel : Develop Machine Learning  
   
-  X. Dana Du    : Manage Repo, Develop Machine Learning
+  Dana Du       : Manage Repo, ETL, Develop Machine Learning
 
  ## Database
  
@@ -63,13 +63,13 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  Trip Id,Trip  Duration,Start Station Id,Start Time,Start Station Name,End Station Id,End Time,End Station Name,Bike Id,User Type
  
  #### Clean and Processed Data 
- Data in Bike Sharing need to be processed , so it can be used for the machine Learning , here is the step that we take using pandas  and jupyter notebook:
+ Raw bike data needed preprocessing before use. Here are the preprocessing steps:
  * Combine ALL CSV data
- * Delete NA data
+ * Delete NAN data
  * Add new column Date , converted from Start Time
  * Group data by Date to get counts_trips
- * Group data by date and search unique value on Bikeid to get counts_bike
- * Group data by date and sum trip duration to get trip duration
+ * Group data by Date and search unique value on Bikeid to get counts_bike
+ * Group data by Date and sum trip duration to get trip duration
  * Filter data with user type="Annual Member" and group by date to get  counts_member_annual
  * Filter data with user type=" Casual Member" and group by date to get counts_member_casual
  * Merge all of the grouping into one dataframe
