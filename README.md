@@ -1,5 +1,5 @@
 
-# Bike Sharing Demand Prediction in Toronto 
+# Toronto Bike Sharing Demand Prediction 
 
 ## Overview 
 Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
@@ -186,7 +186,7 @@ We use Tableau to interactive data visualization with the project.
 details to be filled in next stage..
 
 
-Shohesh CheckIn-- Happy Monday
+
 
 
 
