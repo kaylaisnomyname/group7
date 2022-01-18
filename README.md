@@ -71,7 +71,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  * Export the cleaned bike to csv
  
  
-:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the partial cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
+:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the full cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
 
  
  #### :large_orange_diamond:  Weather Data
@@ -113,8 +113,9 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   
  
  ### Clean dataset:
-:large_orange_diamond: Merge Weather Dataset with Bike Data
-Data preprocessing to be continued.
+:large_orange_diamond: 
+Merge dataset for weather and bike data for 3 years is done. 
+The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the full cleaned csv is: [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
  
 
  ### Tables Description 
@@ -178,7 +179,12 @@ Data preprocessing to be continued.
  
 ## Dashboard
 
+
+
+
+We use Tableau to interactive data visualization with the project.
 details to be filled in next stage..
+
 
 
 
