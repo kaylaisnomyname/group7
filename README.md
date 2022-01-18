@@ -182,4 +182,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 We use Tableau to interactive data visualization with the project.
 details to be filled in next stage..
 
+Shohesh CheckIn-- Happy Monday
+
+
 
