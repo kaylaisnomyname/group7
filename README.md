@@ -118,13 +118,12 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 
 
  <p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/150482856-3303f464-9431-4a0f-ba3d-dea121d423a0.png"/>
+    <img src="https://user-images.githubusercontent.com/88597187/150483728-910e3691-1118-45fd-a638-d6ae8d21f1fd.png"/>
         
 </p>
 
 <p align="center">
   <sub>Figure 1 ERD for Bikesharing Database </sub>
 </p>
-
 
 
