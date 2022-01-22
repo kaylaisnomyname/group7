@@ -108,14 +108,66 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 |b_counts_member_casual|-|int||count of trip with casual member type|
 
  
+ 
  ## Database
  
  ### Database Planning
-  For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
-  
+  For this project we will use PostGreSQL for the database. Each team member will setup the database on the local machine. 
+  Here are the step for setting the database on the local machine:
+  * Create database Bike_sharing in PostGreSQL
+  * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
+  * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
+  * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
+
+:inbox_tray: The detailed process can be seen on [Step to add database on the local postgre.docx](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
+
+
+### Database Connection
+
+* Database name :Bike_sharing 
+* Table : tbl_weather_data , tbl_bike_data
+
+#### :large_orange_diamond:   Table and Data in Bike_sharing database
+Figure 1 will show us The list table in the PostGreSQL database Bike_sharing, it consists of tbl_weather_data and tbl_bike_data. All of the data succesfully transferred to database table as shown in Figure 2.
+
+ <p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150616544-611db12a-e6b1-4d96-8210-782865ca3539.png"/>
+        
+</p>
+
+<p align="center">
+  <sub>Figure 1 List Tables </sub>
+</p>
+
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150616589-f8f24d29-627b-4a99-9bdf-5e017c0c8a0b.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/88597187/150616604-e382ed6d-bc8f-4299-affb-829eeca09198.png" width="600" height="250"/>
+ 
+        
+</p>
+
+<p align="center">
+  <sub>Figure 2 Data in tables </sub>
+</p>
+
+
+#### :large_orange_diamond:  Join Table  and Integration to Machine Learning
+
+For the purpose of machine learning, tbl_bike_data and tbl_weather_data need to be joined into one dataframe. Using Sqlalchemy to connect to database, the tables will be joined using sql query as shown in Figure 3.
+
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150617412-fbda73c7-fa1a-43eb-b918-3206abe81b46.png" width="600" height="250"/>
+        
+</p>
+
+<p align="center">
+  <sub>Figure 3 Database Connection and Join Tables </sub>
+</p>
+
  
  ### ERD 
-
 
  <p align="center">
     <img src="https://user-images.githubusercontent.com/88597187/150483728-910e3691-1118-45fd-a638-d6ae8d21f1fd.png"/>
@@ -123,7 +175,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 </p>
 
 <p align="center">
-  <sub>Figure 1 ERD for Bikesharing Database </sub>
+  <sub>Figure 4 ERD for Bikesharing Database </sub>
 </p>
 
 
