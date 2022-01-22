@@ -86,7 +86,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
   * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
   * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
 
-:inbox_tray: The detailed process can be seen on [Step to add database on the local postgre.docx](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
+:inbox_tray: The detailed process can be seen on [Step to add database on the local PostGreSQL.pdf](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
 
 
 ### Database Connection
