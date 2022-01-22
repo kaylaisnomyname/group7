@@ -180,7 +180,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 ## Dashboard
 
 
-
+https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
 
 We use Tableau to interactive data visualization with the project.
 details to be filled in next stage..
