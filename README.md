@@ -73,9 +73,30 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 
 :heavy_exclamation_mark: This data will be used temporary only until the database connection is fully integrated to machine learning.
 
- ### Tables Description 
  
-#### tbl_weather_data
+ 
+ 
+ ## Database
+ 
+ ### Database Planning
+  For this project we will use PostGreSQL for the database. Each team member will setup the database on the local machine. 
+  Here are the step for setting the database on the local machine:
+  * Create database Bike_sharing in PostGreSQL
+  * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
+  * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
+  * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
+
+:inbox_tray: The detailed process can be seen on [Step to add database on the local postgre.docx](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
+
+
+### Database Connection
+
+* Database name :Bike_sharing 
+* Table : tbl_weather_data , tbl_bike_data
+
+#### :large_orange_diamond:  Tables Description 
+ 
+##### tbl_weather_data
 |Field_name|Key|Data Type|Metric|Description|
 |---|---|---|---|---|
 |w_date|Primary Key|Date||Date|
@@ -97,7 +118,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 
 
 
-#### tbl_bike_data
+##### tbl_bike_data
 |Field_name|Key|Data Type|Metric|Description|
 |---|---|---|---|---|
 |b_date |Primary Key|Date|Date|
@@ -107,25 +128,6 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 |b_counts_member_annual|-|int||count of trip with annual member type|
 |b_counts_member_casual|-|int||count of trip with casual member type|
 
- 
- 
- ## Database
- 
- ### Database Planning
-  For this project we will use PostGreSQL for the database. Each team member will setup the database on the local machine. 
-  Here are the step for setting the database on the local machine:
-  * Create database Bike_sharing in PostGreSQL
-  * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
-  * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
-  * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
-
-:inbox_tray: The detailed process can be seen on [Step to add database on the local postgre.docx](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
-
-
-### Database Connection
-
-* Database name :Bike_sharing 
-* Table : tbl_weather_data , tbl_bike_data
 
 #### :large_orange_diamond:   Table and Data in Bike_sharing database
 Figure 1 will show us The list table in the PostGreSQL database Bike_sharing, it consists of tbl_weather_data and tbl_bike_data. All of the data succesfully transferred to database table as shown in Figure 2.
