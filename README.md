@@ -179,11 +179,24 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
  
 ## Dashboard
 
+We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
 
+### Bike and Weather Data merged
 
+https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
 
-We use Tableau to interactive data visualization with the project.
-details to be filled in next stage..
+#### Average Trip Duration by Year
+#### Annual Member and Casual Member
+#### Annual Members
+#### Weather Temperature 
+
+### Raw Data
+
+https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
+
+#### Top Starting Station
+#### Member Type
+#### Average Trip Duration
 
 
 
