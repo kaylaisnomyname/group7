@@ -185,18 +185,18 @@ We use Tableau to interactive data visualization with the project to identify so
 
 https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
 
-º Average Trip Duration by Year
-º Annual Member and Casual Member
-º Annual Members
-º Weather Temperature 
+#### Average Trip Duration by Year
+#### Annual Member and Casual Member
+#### Annual Members
+#### Weather Temperature 
 
 ### Raw Data
 
 https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
 
-º Top Starting Station
-º Member Type
-º Average Trip Duration
+#### Top Starting Station
+#### Member Type
+#### Average Trip Duration
 
 
 
