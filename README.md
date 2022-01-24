@@ -179,6 +179,25 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
  
 ## Dashboard
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+We use Tableau to interactive data visualization with the project. 
+Details to be filled in next stage..
+=======
+
+
+
+We use Tableau to interactive data visualization with the project.
+details to be filled in next stage..
+
+
+Shohesh CheckIn-- Happy Monday
+
+>>>>>>> a4fad050203de62727e0fc45feea5932e266e994
+=======
+=======
+>>>>>>> 3790bff78b1dfaf549dc3dd8053c572de1f78ad0
 We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
 
 ### Bike and Weather Data merged
@@ -201,5 +220,9 @@ https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publis
 
 ### WebSite creation 
 
+<<<<<<< HEAD
+>>>>>>> 3790bff78b1dfaf549dc3dd8053c572de1f78ad0
+=======
+>>>>>>> 3790bff78b1dfaf549dc3dd8053c572de1f78ad0
 
 
