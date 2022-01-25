@@ -220,6 +220,15 @@ https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publis
 
 ### WebSite creation 
 
+The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
+
+#### Tools 
+
+### HTML
+### CSS
+### Bootstrap
+### Images
+
 <<<<<<< HEAD
 >>>>>>> 3790bff78b1dfaf549dc3dd8053c572de1f78ad0
 =======
