@@ -1,53 +1,7 @@
 
-# Toronto Bike Sharing Demand Prediction 
-
-## Overview 
-Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
-
-Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to create a viable machine learning model to explore possible correlation(s) between the different types of weather conditions and the demand on bike sharing. 
+# Toronto Bike Sharing Demand Prediction/Data ETL and Database 
 
 
-
-### Project Scope: 
-:large_orange_diamond: Location      : This Project is based in Toronto
-
-:large_orange_diamond: Time Range    : 3 years history from 1 January 2019 to 31 December 2021 
-
-
-### Resources:
-
-#### Data Source
-:large_orange_diamond: Bike Sharing Datasets: Downloaded from an open-source portal CKAN ([bike.](https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data) )
-
-:large_orange_diamond: Weather Datasets: Scraped from Wunderground ( [link.](https://www.wunderground.com/history/monthly/ca/toronto/CYTZ)) and download from Meteostat ([link.](https://meteostat.net/en/station/71624?t=2019-01-01/2021-12-31))
-
-#### Tools
-:large_orange_diamond: Software: Jupyter Notebook,PostGreSQL,Parsehub
-
-:large_orange_diamond: Language: Python,SQL
-
-:large_orange_diamond: Library: Pandas,glob,os,sklearn
-
-:large_orange_diamond: Vizualization: Tableau/HTLM/JS
-
-
-### Questions we hope to answer: 
-
-* How weather conditions affect the demand of bike sharing in Toronto?
-* Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
-* Suggestions for next business strategy.  
-
-
-
-## Group communication protocols:
-* Team members communicate via Slack, Email and Google drive.  
-* Responsibilities:
-  - Inez Suyono   : ETL, Develop Database
-  - Ivan Coelho   : Develop Database / Visualization
-  - Shohesh Patel : Develop Machine Learning
-  - Dana Du       : Manage Repo, ETL, Develop Machine Learning
-
- 
  ## Data ETL 
  
  ### Raw data:
@@ -71,7 +25,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  * Export the cleaned bike to csv
  
  
-:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the full cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
+:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE),   the full cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)  
 
  
  #### :large_orange_diamond:  Weather Data
@@ -93,8 +47,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
  Metric : Celcius, Kmh, Percentage,hPA
  
- #### Clean Data:
- Clean data preprocessing steps are:
+ #### Clean and Processed Data:
+ For Wunderground, here is the step that we take using pandas and jupyter notebook:
  * Combine csv files to one 
  * Substring Year value to get correct value of the year
  * Mapping Month from text to number
@@ -105,88 +59,125 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
  - Drop wind speed column because we will take more detailed data from wunderground and tsun column because it doesn't have any value and there is not explanation what the column stands for.
  
  
- The two dataset will be merged by Year, Month and Day to get one full dataset. The result can be seen on tables description --> Tbl_weather_data.
+ The two dataset will be merged by Year, Month and Day to get one full dataset. The result can be seen on Tbl_weather_data.
  
  
-:inbox_tray: The full process can be seen on [Weather_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes)   and the result can be seen on [weather_data_clean.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)
+:inbox_tray: The full process can be seen on [Weather_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE)   and the result can be seen on [weather_data_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
 
   
  
- ### Clean dataset:
+### Clean dataset:
 :large_orange_diamond: 
-Merge dataset for weather and bike data for 3 years is done. 
-The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/main/Codes),   the full cleaned csv is: [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/main/Resources)  
- 
+Merge dataset for weather and bike data for 3 years. 
+The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE),   the full cleaned csv is: [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)  
 
- ### Tables Description 
- 
-#### Tbl_weather_data
-|Field_name|Key|Data Type|Metric|Description|
-|---|---|---|---|---|
-|W_Date|Primary Key|datetime64[ns]||Date|
-|W_Temp_Max|-|float64|Celcius|Maximum Temperature|
-|W_Temp_Avg|-|float64|Celcius|Average Temperature|
-|W_Temp_Min|-|float64|Celcius|Minimum Temperature|
-|W_Max_wind|-|float64|Km/h|Maximum Wind Speed|
-|W_Avg_wind|-|float64|Km/h|Average Wind Speed|
-|W_Min_wind|-|float64|Km/h|Minimum Wind Speed|
-|W_Wind_Gust|-|float64|Km/h|Wind Gust|
-|W_Air_Pressure|-|float64|hPa|Air Pressure|
-|W_Snow_Depth|-|float64|mm|Snow Depth|
-|W_Max_humid|-|float64|%|Maximum Humidity|
-|W_Avg_humid|-|float64|%|Average Humidity|
-|W_Min_humid|-|float64|%|Minimum Humidity|
-|W_Max_Dp|-|float64|Celcius|Maximum Dew Point|
-|W_Avg_dp|-|float64|Celcius|Average Dew Point|
-|W_Min_Dp|-|float64|Celcius|Minimum Dew Point|
-
-
-
-#### Tbl_bike_data
-|Field_name|Key|Data Type|Metric|Description|
-|---|---|---|---|---|
-|Date |Primary Key|datetime64[ns]||Date|
-|counts_trips|-|int64||Trip counts|
-|counts_Bike|-|int64||count of unique bike id on that date|
-|trip_duration|-|float64||sum of trip duration on that date|
-|counts_member_annual|-|int64||count of trip with annual member type|
-|counts_member_casual|-|int64||count of trip with casual member type|
+:heavy_exclamation_mark: This data will be used temporary only until the database connection is fully integrated to machine learning.
 
  
  
- ## Machine Learning Model  
- ** Preliminary test**: Preliminary test was performed using Dec 2021 sample. We use Linear Regression model to check for possible relationships. As the sample data is relatively small, the outcome was not as we predicted. Further details will be filled when the full cleaned dataset is ready. 
- Next stage will try out different regression models on full cleaned dataset.
  
  ## Database
  
  ### Database Planning
-  For this project we will use PostGreSQL for the database. To  make sure everyone will have the database, we will make script for making the table in database and each of team member will run the script in their local machine.
-  
- 
- ### ERD 
+  For this project we will use PostGreSQL for the database. Each team member will setup the database on the local machine. 
+  Here are the step for setting the database on the local machine:
+  * Create database Bike_sharing in PostGreSQL
+  * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
+  * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
+  * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
 
+:inbox_tray: The detailed process can be seen on [Step to add database on the local PostGreSQL.pdf](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
+
+
+### Database Connection
+
+* Database name :Bike_sharing 
+* Table : tbl_weather_data , tbl_bike_data
+
+#### :large_orange_diamond:  Tables Description 
+ 
+##### tbl_weather_data
+|Field_name|Key|Data Type|Metric|Description|
+|---|---|---|---|---|
+|w_date|Primary Key|Date||Date|
+|w_temp_max|-|float8|Celcius|Maximum Temperature|
+|w_temp_avg|-|float8|Celcius|Average Temperature|
+|w_temp_min|-|float8|Celcius|Minimum Temperature|
+|w_max_wind|-|float8|Km/h|Maximum Wind Speed|
+|w_avg_wind|-|float8|Km/h|Average Wind Speed|
+|w_min_wind|-|float8|Km/h|Minimum Wind Speed|
+|w_wind_gust|-|float8|Km/h|Wind Gust|
+|w_air_pressure|-|float8|hPa|Air Pressure|
+|w_snow_depth|-|float8|mm|Snow Depth|
+|w_max_humid|-|float8|%|Maximum Humidity|
+|w_avg_humid|-|float8|%|Average Humidity|
+|w_min_humid|-|float8|%|Minimum Humidity|
+|w_max_dp|-|float8|Celcius|Maximum Dew Point|
+|w_avg_dp|-|float8|Celcius|Average Dew Point|
+|w_min_dp|-|float8|Celcius|Minimum Dew Point|
+
+
+
+##### tbl_bike_data
+|Field_name|Key|Data Type|Metric|Description|
+|---|---|---|---|---|
+|b_date |Primary Key|Date|Date|
+|b_counts_trips|-|int||Trip counts|
+|b_counts_Bike|-|int||count of unique bike id on that date|
+|b_trip_duration|-|float8||sum of trip duration on that date|
+|b_counts_member_annual|-|int||count of trip with annual member type|
+|b_counts_member_casual|-|int||count of trip with casual member type|
+
+
+#### :large_orange_diamond:   Table and Data in Bike_sharing database
+Figure 1 will show us The list table in the PostGreSQL database Bike_sharing, it consists of tbl_weather_data and tbl_bike_data. All of the data succesfully transferred to database table as shown in Figure 2.
 
  <p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/149685581-a4f98f93-6fa0-47f9-adfc-d720d1033cef.png"/>
+    <img src="https://user-images.githubusercontent.com/88597187/150616544-611db12a-e6b1-4d96-8210-782865ca3539.png"/>
         
 </p>
 
 <p align="center">
-  <sub>Figure 1 ERD for Bikesharing Database </sub>
+  <sub>Figure 1 List Tables </sub>
+</p>
+
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150616589-f8f24d29-627b-4a99-9bdf-5e017c0c8a0b.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/88597187/150616604-e382ed6d-bc8f-4299-affb-829eeca09198.png" width="600" height="250"/>
+ 
+        
+</p>
+
+<p align="center">
+  <sub>Figure 2 Data in tables </sub>
+</p>
+
+
+#### :large_orange_diamond:  Join Table  and Integration to Machine Learning
+
+For the purpose of machine learning, tbl_bike_data and tbl_weather_data need to be joined into one dataframe. Using Sqlalchemy to connect to database, the tables will be joined using sql query as shown in Figure 3.
+
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150617412-fbda73c7-fa1a-43eb-b918-3206abe81b46.png" width="600" height="250"/>
+        
+</p>
+
+<p align="center">
+  <sub>Figure 3 Database Connection and Join Tables </sub>
 </p>
 
  
-## Dashboard
+ ### ERD 
 
+ <p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/150483728-910e3691-1118-45fd-a638-d6ae8d21f1fd.png"/>
+        
+</p>
 
-
-
-We use Tableau to interactive data visualization with the project.
-details to be filled in next stage..
-
-
-
-
+<p align="center">
+  <sub>Figure 4 ERD for Bikesharing Database </sub>
+</p>
 
 
