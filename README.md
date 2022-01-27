@@ -86,10 +86,11 @@ From the Bike sharing data  that  downloaded from CKAN (previously known as open
 - Upload the missing data station that has been filled
 - Merge this to the raw bike data to get all start station name and end station name filled , and to filled the latitude and longitude for the station too.
 
-Because it's only for the visualization and not for the machine learning. The data will be accessible by csv only .
+Because it's only for the visualization and not for the machine learning. The data will be accessible by csv only . 
 
 
-:inbox_tray: The full process can be seen on [Bike_data_visualization.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE)   and the result can be seen on [tbl_raw_bike_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources), the all station data can be seen on [tbl_station.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
+:inbox_tray: The full process can be seen on [Bike_data_visualization.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE).   
+The csv result will not be uploaded to github because its too large (1.5 GB) so the result can be seen on the    [tbl_raw_bike_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources) printscreen, the all station data can be seen on [tbl_station.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
  
  
  
