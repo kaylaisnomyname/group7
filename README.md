@@ -3,11 +3,10 @@
 # Toronto Bike Sharing Demand Prediction 
 
 ## Overview: 
+
 Bike sharing is a shared transport service using bike on a short term for a price. The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken from any station and returned to any station in the bike share system. Riders use bike share for commuting to work or leisure—like running errands, going to appointments or meeting up with friends.Riders also can use bike to connect to public transportation or just doing exercise for exploring the city.  
 
 Weather conditions have considerable influence on cycling travel behavior. Our goal in this project is to create a viable machine learning model to explore possible correlation(s) between the different types of weather conditions and the demand on bike sharing. 
-
-
 
 ### Project Scope: 
 :large_orange_diamond: Location      : This Project is based in Toronto
@@ -48,7 +47,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Shohesh Patel : Develop Machine Learning
   - Dana Du       : Manage Repo, ETL, Machine Learning
 
- ## Machine Learning Model:  
+## Machine Learning Model:  
 1. Preliminary data preprocessing:  
 Raw datasets consist of bike checkout logs and daily weather conditions. Raw bike dataset is first grouped by date and then joined with weather dataset by date to form a new dataframe. All Nan values, such as depth of snow, are filled by zero since the minimum value of the snow depth is zero. The cleaned dataset is then ensured with no duplicates or NaN values. Data preprocessing details are shown in Weather_Data_ETL.ipynb and Bike_data_ETL.ipynb.  
 
@@ -122,6 +121,6 @@ The main purpose of creation of the website is practice what we learn through th
 
 
 
- 
+
 
 
