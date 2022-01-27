@@ -71,11 +71,44 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 ## Dashboard
 
 
+https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
+
+#### Top Starting Station
+#### Member Type
+#### Average Trip Duration
 
 
-We use Tableau to interactive data visualization with the project.
-details to be filled in next stage..
 
+We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
+
+### Bike and Weather Data merged
+
+https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
+
+#### Average Trip Duration by Year
+#### Annual Member and Casual Member
+#### Annual Members
+#### Weather Temperature 
+
+### Raw Data
+
+https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
+
+#### Top Starting Station
+#### Member Type
+#### Average Trip Duration
+
+
+### WebSite creation 
+
+The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
+
+#### Tools 
+
+### HTML
+### CSS
+### Bootstrap
+### Images
 
 
 
