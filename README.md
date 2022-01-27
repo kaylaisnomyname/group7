@@ -74,6 +74,24 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
 :heavy_exclamation_mark: This data will be used temporary only until the database connection is fully integrated to machine learning.
 
  
+  ### Bike Data for Visualization 
+From the Bike sharing data  that  downloaded from CKAN (previously known as open data Toronto), we add latitude and longitude of the station to add more data for the visualization purpose.  The Latitude and longitude is taken from [Toronto Public bike system](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information) in JSON Format that can be seen on [station_information.json](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources). Here is the step of cleaning the data using jupyter notebook and pandas :
+- Upload the raw bike data to jupyter notebook
+- Check if there are  missing station name ( start and end)  
+- Upload the station information to jupyter notebook
+- Merge data from raw bike data and station information using station id (start and end) as key.  
+- Check if there are missing station that are exist in the raw bike data but not in station information
+- Download the missing data station
+- Filling up Latitude and longitude for the missing data station using google , if not found it will stay NA ( there are 11 station missing latitude and longitude)
+- Upload the missing data station that has been filled
+- Merge this to the raw bike data to get all start station name and end station name filled , and to filled the latitude and longitude for the station too.
+
+Because it's only for the visualization and not for the machine learning. The data will be accessible by csv only . 
+
+
+:inbox_tray: The full process can be seen on [Bike_data_visualization.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE).   
+The csv result will not be uploaded to github because its too large (1.5 GB) so the result can be seen on the    [tbl_raw_bike_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources) printscreen, the all station data can be seen on [tbl_station.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
+ 
  
  
  ## Database
@@ -85,6 +103,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
   * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
   * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
   * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
+  
 
 :inbox_tray: The detailed process can be seen on [Step to add database on the local PostGreSQL.pdf](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
 
