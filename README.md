@@ -77,7 +77,7 @@ The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylais
   ### Bike Data for Visualization 
 From the Bike sharing data  that  downloaded from CKAN (previously known as open data Toronto), we add latitude and longitude of the station to add more data for the visualization purpose.  The Latitude and longitude is taken from [Toronto Public bike system](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information) in JSON Format that can be seen on [station_information.json](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources). Here is the step of cleaning the data using jupyter notebook and pandas :
 - Upload the raw bike data to jupyter notebook
-- Check if there are station name ( start and end) that is missing 
+- Check if there are  missing station name ( start and end)  
 - Upload the station information to jupyter notebook
 - Merge data from raw bike data and station information using station id (start and end) as key.  
 - Check if there are missing station that are exist in the raw bike data but not in station information
