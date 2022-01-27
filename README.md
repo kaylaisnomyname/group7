@@ -74,7 +74,7 @@ As per results of the four approaches, LR has much larger mse(mean squared error
  <!-- Place this tag where you want the button to render. -->
 
    
-<a href="https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
+<a href="https://github.com/kaylaisnomyname/group7/tree/Database_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
 
 ## Dashboard:
