@@ -19,9 +19,9 @@ Weather dataset are scraped from [link.](https://www.wunderground.com/history/mo
     - email  
   
  - [x] ETL: done.
- - [ ] Machine Learning Model:  ing
+ - [ ] Machine Learning Model:  ing. referred to branch machineLearning
  - [ ] Database:  ing
- - [ ] Visualization:
+ - [ ] Visualization: ing
 
 
 
