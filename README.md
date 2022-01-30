@@ -48,21 +48,12 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Dana Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
-1. Preliminary data preprocessing:  
-Raw datasets consist of bike checkout logs and daily weather conditions. Raw bike dataset is first grouped by date and then joined with weather dataset by date to form a new dataframe. All Nan values, such as depth of snow, are filled by zero since the minimum value of the snow depth is zero. The cleaned dataset is then ensured with no duplicates or NaN values. Data preprocessing details are shown in Weather_Data_ETL.ipynb and Bike_data_ETL.ipynb.  
+The  Pre-eliminary Machine Learning Model  will use Random Forest and Linear Regression.
 
-2. Preliminary feature engineering, feature selection and decision-making process:  
-There are three possible outcomes: counts_trips, trip_duration, counts_Bike. Four approaches have been made and compared. The details and results are shown in machineLearning_Scaled.ipynb. After comparing, the better target and features set is:  
+For more detailed about the Machine Learning Model please click button below
 
-    - target: counts_Bike,  
-    - the independent features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point (the features' names here are for description only).   
-
-3. Splitting training and testing datasets:  
-The dataset is split into training and testing sets with a default ratio of 0.75 and 0.25, random state of 78. The training set is then standardized as the value magnitudes of the independent variables are too wide apart, regardless of units. 
-
-4. Explanation of model choice, limitations and benefits:  
-So far there are two models tested: Linear Regression model(LR) and Random Forest model(RF).  LR is easier and faster to compute, but sensitive to outliers. In contrast, RF is less sensitive to outliers and is able to learn non-linear relationship, yet it is relatively vulnerable to overfitting. 
-As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.  
+   
+<a href="https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
 
  ## Data and Database:
@@ -71,7 +62,7 @@ As per results of the four approaches, LR has much larger mse(mean squared error
  
  For more detailed about ETL Process and Database please click button below
 
- <!-- Place this tag where you want the button to render. -->
+
 
    
 <a href="https://github.com/kaylaisnomyname/group7/tree/Database_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
@@ -79,45 +70,48 @@ As per results of the four approaches, LR has much larger mse(mean squared error
 
 ## Dashboard:
 
+### <img src="https://user-images.githubusercontent.com/88597187/151684747-e0141d56-07d6-4f36-bd40-ff6932e6e896.png" width="50" height="50"/> Dashboard Presentation
 
-https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
-
-#### Top Starting Station
-#### Member Type
-#### Average Trip Duration
+Google Presentation can be seen on : https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf
 
 
+### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/> 
 
 We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
 
-### Bike and Weather Data merged
 
-https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
+#### :diamond_shape_with_a_dot_inside: Bike  Data
 
-#### Average Trip Duration by Year
-#### Annual Member and Casual Member
-#### Annual Members
-#### Weather Temperature 
+Link : https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
 
-### Raw Data
-
-https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
-
-#### Top Starting Station
-#### Member Type
-#### Average Trip Duration
+In this story , we will visualize: 
+* Top Starting Station
+* Member Type
+* Average Trip Duration
 
 
-### WebSite creation 
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data 
+
+Link : https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
+
+In this story , we will visualize: 
+* Average Trip Duration by Year
+* Annual Member and Casual Member
+* Annual Members
+* Weather Temperature 
+
+
+
+### :globe_with_meridians: Website
 
 The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
 
+The link for  the website will be updated later.
 #### Tools 
+* HTML
+* CSS
+* Bootstrap
 
-### HTML
-### CSS
-### Bootstrap
-### Images
 
 
 
