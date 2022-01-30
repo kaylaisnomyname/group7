@@ -48,10 +48,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Dana Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
-The  Pre-eliminary Machine Learning Model  will use Random Forest and Linear Regression.
 
 For more detailed about the Machine Learning Model please click button below
-
    
 <a href="https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
