@@ -57,5 +57,5 @@ Features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth,
 
 
 
-:inbox_tray:  The full process can be seen on [machineLearning_Segment2.ipynb](https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main/Codes)
+:inbox_tray:  The full process can be seen on [machineLearning_Segment2.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment2.ipynb)
 
