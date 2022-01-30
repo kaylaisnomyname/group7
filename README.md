@@ -1,202 +1,99 @@
 
-# Toronto Bike Sharing Demand Prediction/Data ETL and Database 
+# Toronto Bike Sharing Demand Prediction/Machine Learning 
 
 
- ## Data ETL 
- 
- ### Raw data:
- #### :large_orange_diamond: Bike Sharing Data 
- The Bike sharing data is downloaded from CKAN (previously known as open data Toronto).
- 
- Variables in the dataset : 
- Trip Id, Trip Duration, Start Station Id, Start Time, Start Station Name, End Station Id, End Time, End Station Name, Bike Id, User Type
- 
- #### Clean and Processed Data 
- The dataset needs to be preprocessed. The preprocessing steps are:  
- * Combine ALL CSV data
- * Delete NAN data
- * Add new column Date , converted from Start Time
- * Group by Date to get counts_trips
- * Group by Date and search unique value on Bikeid to get counts_bike
- * Group by Date and sum trip duration to get trip duration
- * Filter with user type="Annual Member" and group by date to get  counts_member_annual
- * Filter with user type=" Casual Member" and group by date to get counts_member_casual
- * Merge all of the grouping into one dataframe
- * Export the cleaned bike to csv
- 
- 
-:inbox_tray: Details of extraction please refer to [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE),   the full cleaned csv is: [Bike_data.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)  
+## Pre-Eliminary 
+For the pre-eliminary , we will use two model Linear Regression and Random Forest .
 
- 
- #### :large_orange_diamond:  Weather Data
- The Weather data is coming from two sources: the wonderground website and Meteostat. The data then  will be combined to  get more features on weather data. 
- #####  :arrow_forward: Wunderground Data
- The wunderground data  is scraped from the  daily observation table on the website. We use Parsehub to scrape the table. 
- 
- Features in  dataset :
- 
- Year, Month , Day, Max Dew Points, Average Dew Points, Max Wind Speed , Average Wind Speed , Min Wind Speed, Max Humidity, Average Humidity, Min Humidity
- 
- Metric : Fahrenheit, Mph, Percentage
- 
- ##### :arrow_forward: Meteostat Data
- The wunderground data  is downloaded directly from the website. 
- 
- Features in  dataset:
- date,temperature average,temperature min,temperature max, precipitation,snow depth,	wind direction,wind speed, wind gust, air pressure, tsun
+### Data Preprocessing :
+Raw datasets consist of bike checkout logs and daily weather conditions. Raw bike dataset is first grouped by date and then joined with weather dataset by date to form a new dataframe. All Nan values, such as depth of snow, are filled by zero since the minimum value of the snow depth is zero. The cleaned dataset is then ensured with no duplicates or NaN values. Data preprocessing details are shown in Weather_Data_ETL.ipynb and Bike_data_ETL.ipynb. 
 
- Metric : Celcius, Kmh, Percentage,hPA
- 
- #### Clean and Processed Data:
- For Wunderground, here is the step that we take using pandas and jupyter notebook:
- * Combine csv files to one 
- * Substring Year value to get correct value of the year
- * Mapping Month from text to number
- * Change metric from Fahrenheit to Celcius and Mph to Kmh
- 
- For Meteostat , here is the step that we take using pandas  and jupyter notebook:
- - Parse Date value to Year, Month and Day and  add it to new column
- - Drop wind speed column because we will take more detailed data from wunderground and tsun column because it doesn't have any value and there is not explanation what the column stands for.
- 
- 
- The two dataset will be merged by Year, Month and Day to get one full dataset. The result can be seen on Tbl_weather_data.
- 
- 
-:inbox_tray: The full process can be seen on [Weather_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE)   and the result can be seen on [weather_data_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
 
+### Feature engineering, Feature selection and decision-making process: 
+
+:large_orange_diamond: Possible Input Features (X): average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point 
+
+:large_orange_diamond: Possible Target Output (y): counts_trips, trip_duration, counts_Bike
+
+Four approach has been made to select the best output and input. The first approach is for testing only which take  count trips as output and all possible input features + other field in the table as the input.  The other three approach  will focus on the weather data( all possible input features)  and difference output as the target.
+
+###  Splitting training and testing datasets:
+
+The dataset is split into training and testing sets with a default ratio of 0.75 and 0.25, random state of 78. The training set is then standardized as the value magnitudes of the independent variables are too wide apart, regardless of units.
+
+### Performance Metric 
+
+:large_orange_diamond: MAE : This metric will be used to measure how far the prediction from the actual output by calculating the average of the difference between original value and predicted values.
+
+:large_orange_diamond: MSE : This metric measures the average squares of the error 
+
+:large_orange_diamond: RMSE : This metric  is  the square root of the mean of the square of all of the error
+
+:large_orange_diamond: R Squared : R-squared is a statistical measure of how close the data are to the fitted regression line. R Squared is range between 0-100%. 
+* 0% indicates that the model explains none of the variability of the response data around its mean.
+* 100% indicates that the model explains all the variability of the response data around its mean.
+
+
+:large_orange_diamond: Overall model Score : this metric calculate the model score 
+
+:large_orange_diamond: Feature Importance : Feature importances refers  to a class of techniques for assigning scores to input features to a predictive model that indicates the relative importance of each feature when making a prediction. The scores can be used for better understanding of the data , model and reducing the number of input features.
+
+### Result 
+
+From the four approach that has been made, we will focus on the result of 3 latest approach, because the first approach take input features other than the weather data . Here is the score result of the data.
+
+#### :large_orange_diamond: Linear Regression
+
+Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point
+
+
+|Approach|Output(y)|Input(X)|MAE|MSE|RMSE|R2|Model Score|Features|
+|---|---|---|---|---|---|---|---|---|
+|2|Trip Duration|Weather Data|2898617.80|19112705117582.13|4371807.99|0.66|0.61|3028435.96795406  -157634.29552501  -834353.15862045    42048.10134156 467305.57600121 -2607110.83188877  3292337.77972865|
+|3|Count Bikes|Weather Data|433.93|284447.25|533.33|0.76|0.75| -5.24344439  -34.27180844 -128.52401456   21.32274899  -47.95303541 -468.61274889  961.28760939|
+|4|Count Trips|Weather Data|2898617.80|19112705117582.13|4371807.99|0.66|0.61|3028435.96795406  -157634.29552501  -834353.15862045    42048.10134156 467305.57600121 -2607110.83188877  3292337.77972865|
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/151683588-c5967148-c933-44d8-8549-5962a67dc5d4.jpg" width="350" height="250"/>
+ <img src="https://user-images.githubusercontent.com/88597187/151683672-f200e351-24f0-4291-b625-9306b3bd1d45.JPG" width="350" height="250"/>
+<img src="https://user-images.githubusercontent.com/88597187/151683684-26e6f899-7150-4e06-a7cd-4d6e1004e1a7.jpg" width="350" height="250"/> 
   
- 
-### Clean dataset:
-:large_orange_diamond: 
-Merge dataset for weather and bike data for 3 years. 
-The full process can be seen on [Bike_data_ETL.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE),   the full cleaned csv is: [Bike_weather_merge.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)  
+</p>
 
-:heavy_exclamation_mark: This data will be used temporary only until the database connection is fully integrated to machine learning.
-
- 
-  ### Bike Data for Visualization 
-From the Bike sharing data  that  downloaded from CKAN (previously known as open data Toronto), we add latitude and longitude of the station to add more data for the visualization purpose.  The Latitude and longitude is taken from [Toronto Public bike system](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information) in JSON Format that can be seen on [station_information.json](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources). Here is the step of cleaning the data using jupyter notebook and pandas :
-- Upload the raw bike data to jupyter notebook
-- Check if there are  missing station name ( start and end)  
-- Upload the station information to jupyter notebook
-- Merge data from raw bike data and station information using station id (start and end) as key.  
-- Check if there are missing station that are exist in the raw bike data but not in station information
-- Download the missing data station
-- Filling up Latitude and longitude for the missing data station using google , if not found it will stay NA ( there are 11 station missing latitude and longitude)
-- Upload the missing data station that has been filled
-- Merge this to the raw bike data to get all start station name and end station name filled , and to filled the latitude and longitude for the station too.
-
-Because it's only for the visualization and not for the machine learning. The data will be accessible by csv only . 
+<p align="center">
+  <sub>Figure 1 Chart Features Importance for Linear Regression </sub>
+</p>
 
 
-:inbox_tray: The full process can be seen on [Bike_data_visualization.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/ETL_CODE).   
-The csv result will not be uploaded to github because its too large (1.5 GB) so the result can be seen on the    [tbl_raw_bike_clean.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources) printscreen, the all station data can be seen on [tbl_station.csv](https://github.com/kaylaisnomyname/group7/tree/Database_main/Resources)
- 
- 
- 
- ## Database
- 
- ### Database Planning
-  For this project we will use PostGreSQL for the database. Each team member will setup the database on the local machine. 
-  Here are the step for setting the database on the local machine:
-  * Create database Bike_sharing in PostGreSQL
-  * Run script [Create_table.sql](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) on the query tool to create tbl_weather_data and tbl_bike_data
-  * Run [Pandas_to_SQL_connection.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) to transfer data from pandas dataframe to PostGreSQL database
-  * To connect database machine learning with the database , team member will use [Header_Machine_Learning.ipynb](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing) in the header.
+
+
+#### :large_orange_diamond: Random Forest 
+
+
+Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point
+
+
+|Approach|Output(y)|Input(X)|MAE|MSE|RMSE|R2|Model Score|Features|
+|---|---|---|---|---|---|---|---|---|
+|2|Trip Duration|Weather Data|1048141.49|2810649367460.835|1676499.14|0.95|0.63|0.69310303 0.04746964 0.04085829 0.06743581 0.00131287 0.10377995 0.04604042|
+|3|Count Bikes|Weather Data|160.38|42654.64|206.53|0.96|0.78| 0.72344709 0.04846094 0.03794404 0.05178519 0.01088794 0.08389985 0.04357494|
+|4|Count Trips|Weather Data|1048141.49|2810649367460.835|1676499.14|0.95|0.63|0.69310303 0.04746964 0.04085829 0.06743581 0.00131287 0.10377995 0.04604042|
+
+
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/88597187/151683712-47d457a7-0a2c-4dc3-9b8a-8da8646a638d.jpg" width="350" height="250"/>
+ <img src="https://user-images.githubusercontent.com/88597187/151683713-b971f832-69ca-49d4-a8f5-7fdb2b134778.jpg" width="350" height="250"/>
+<img src="https://user-images.githubusercontent.com/88597187/151683714-0c7319f8-2174-4ab9-b33c-5505c17de672.jpg" width="350" height="250"/> 
   
-
-:inbox_tray: The detailed process can be seen on [Step to add database on the local PostGreSQL.pdf](https://github.com/kaylaisnomyname/group7/tree/Database_main/Database_bike_sharing)
-
-
-### Database Connection
-
-* Database name :Bike_sharing 
-* Table : tbl_weather_data , tbl_bike_data
-
-#### :large_orange_diamond:  Tables Description 
- 
-##### tbl_weather_data
-|Field_name|Key|Data Type|Metric|Description|
-|---|---|---|---|---|
-|w_date|Primary Key|Date||Date|
-|w_temp_max|-|float8|Celcius|Maximum Temperature|
-|w_temp_avg|-|float8|Celcius|Average Temperature|
-|w_temp_min|-|float8|Celcius|Minimum Temperature|
-|w_max_wind|-|float8|Km/h|Maximum Wind Speed|
-|w_avg_wind|-|float8|Km/h|Average Wind Speed|
-|w_min_wind|-|float8|Km/h|Minimum Wind Speed|
-|w_wind_gust|-|float8|Km/h|Wind Gust|
-|w_air_pressure|-|float8|hPa|Air Pressure|
-|w_snow_depth|-|float8|mm|Snow Depth|
-|w_max_humid|-|float8|%|Maximum Humidity|
-|w_avg_humid|-|float8|%|Average Humidity|
-|w_min_humid|-|float8|%|Minimum Humidity|
-|w_max_dp|-|float8|Celcius|Maximum Dew Point|
-|w_avg_dp|-|float8|Celcius|Average Dew Point|
-|w_min_dp|-|float8|Celcius|Minimum Dew Point|
-
-
-
-##### tbl_bike_data
-|Field_name|Key|Data Type|Metric|Description|
-|---|---|---|---|---|
-|b_date |Primary Key|Date|Date|
-|b_counts_trips|-|int||Trip counts|
-|b_counts_Bike|-|int||count of unique bike id on that date|
-|b_trip_duration|-|float8||sum of trip duration on that date|
-|b_counts_member_annual|-|int||count of trip with annual member type|
-|b_counts_member_casual|-|int||count of trip with casual member type|
-
-
-#### :large_orange_diamond:   Table and Data in Bike_sharing database
-Figure 1 will show us The list table in the PostGreSQL database Bike_sharing, it consists of tbl_weather_data and tbl_bike_data. All of the data succesfully transferred to database table as shown in Figure 2.
-
- <p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/150616544-611db12a-e6b1-4d96-8210-782865ca3539.png"/>
-        
 </p>
 
 <p align="center">
-  <sub>Figure 1 List Tables </sub>
+  <sub>Figure 2 Chart Features Importance for Random Forest </sub>
 </p>
 
 
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/150616589-f8f24d29-627b-4a99-9bdf-5e017c0c8a0b.png" width="600" height="250"/>
- <img src="https://user-images.githubusercontent.com/88597187/150616604-e382ed6d-bc8f-4299-affb-829eeca09198.png" width="600" height="250"/>
- 
-        
-</p>
 
-<p align="center">
-  <sub>Figure 2 Data in tables </sub>
-</p>
-
-
-#### :large_orange_diamond:  Join Table  and Integration to Machine Learning
-
-For the purpose of machine learning, tbl_bike_data and tbl_weather_data need to be joined into one dataframe. Using Sqlalchemy to connect to database, the tables will be joined using sql query as shown in Figure 3.
-
-
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/150617412-fbda73c7-fa1a-43eb-b918-3206abe81b46.png" width="600" height="250"/>
-        
-</p>
-
-<p align="center">
-  <sub>Figure 3 Database Connection and Join Tables </sub>
-</p>
-
- 
- ### ERD 
-
- <p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/150483728-910e3691-1118-45fd-a638-d6ae8d21f1fd.png"/>
-        
-</p>
-
-<p align="center">
-  <sub>Figure 4 ERD for Bikesharing Database </sub>
-</p>
-
+### Explanation of model choice, limitations and benefits:
+From the two models we tested:  Linear Regression model(LR) and Random Forest model(RF). LR is easier and faster to compute, but sensitive to outliers. In contrast, RF is less sensitive to outliers and is able to learn non-linear relationship, yet it is relatively vulnerable to overfitting. As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.
 
