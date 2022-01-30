@@ -97,3 +97,5 @@ Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_d
 ### Explanation of model choice, limitations and benefits:
 From the two models we tested:  Linear Regression model(LR) and Random Forest model(RF). LR is easier and faster to compute, but sensitive to outliers. In contrast, RF is less sensitive to outliers and is able to learn non-linear relationship, yet it is relatively vulnerable to overfitting. As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.
 
+
+:inbox_tray:  The full process can be seen on [machineLearning_Scaled.ipynb](https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main/Codes)
