@@ -34,21 +34,20 @@ Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_d
 |3|Count Bikes|Weather Data|433.93|284447.25|533.33|0.76|0.75| -5.24344439  -34.27180844 -128.52401456   21.32274899  -47.95303541 -468.61274889  961.28760939|
 |4|Count Trips|Weather Data|2898617.80|19112705117582.13|4371807.99|0.66|0.61|3028435.96795406  -157634.29552501  -834353.15862045    42048.10134156 467305.57600121 -2607110.83188877  3292337.77972865|
 
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/151683588-c5967148-c933-44d8-8549-5962a67dc5d4.jpg" width="350" height="250"/>
- <img src="https://user-images.githubusercontent.com/88597187/151683672-f200e351-24f0-4291-b625-9306b3bd1d45.JPG" width="350" height="250"/>
-<img src="https://user-images.githubusercontent.com/88597187/151683684-26e6f899-7150-4e06-a7cd-4d6e1004e1a7.jpg" width="350" height="250"/> 
-  
-</p>
 
-<p align="center">
-  <sub>Figure 1 Chart Features Importance for Linear Regression </sub>
-</p>
+
+###### LR_Approach 2
+![LR_1](https://user-images.githubusercontent.com/88597187/151683588-c5967148-c933-44d8-8549-5962a67dc5d4.jpg)  
+###### LR_Approach 3 
+![LR_2](https://user-images.githubusercontent.com/88597187/151683672-f200e351-24f0-4291-b625-9306b3bd1d45.JPG)  
+###### LR_Approach 4 
+![LR_3](https://user-images.githubusercontent.com/88597187/151683684-26e6f899-7150-4e06-a7cd-4d6e1004e1a7.jpg)    
 
 
 
 
-#### :large_orange_diamond: Random Forest 
+
+#### :large_orange_diamond: Random Forest   
 
 
 Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point
@@ -62,17 +61,12 @@ Weather Data : average_temp, average_wind_speed, wind_gust, air_pressure, snow_d
 
 
 
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/88597187/151683712-47d457a7-0a2c-4dc3-9b8a-8da8646a638d.jpg" width="350" height="250"/>
- <img src="https://user-images.githubusercontent.com/88597187/151683713-b971f832-69ca-49d4-a8f5-7fdb2b134778.jpg" width="350" height="250"/>
-<img src="https://user-images.githubusercontent.com/88597187/151683714-0c7319f8-2174-4ab9-b33c-5505c17de672.jpg" width="350" height="250"/> 
-  
-</p>
-
-<p align="center">
-  <sub>Figure 2 Chart Features Importance for Random Forest </sub>
-</p>
-
+###### RF_Approach 2
+![RF_1](https://user-images.githubusercontent.com/88597187/151683712-47d457a7-0a2c-4dc3-9b8a-8da8646a638d.jpg)
+###### RF_Approach 3
+![RF_2](https://user-images.githubusercontent.com/88597187/151683713-b971f832-69ca-49d4-a8f5-7fdb2b134778.jpg)
+###### RF_Approach 4
+![RF_3](https://user-images.githubusercontent.com/88597187/151683714-0c7319f8-2174-4ab9-b33c-5505c17de672.jpg)
 
 
 ### Explanation of model choice, limitations and benefits:
