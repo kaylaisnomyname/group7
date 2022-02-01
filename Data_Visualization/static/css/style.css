@@ -1,0 +1,27 @@
+html 
+{
+  width: 100%;
+}
+img 
+{
+  max-width: 100%;
+}
+
+body {
+
+    color: #f7f7f7;
+    
+  }
+
+   .jumbotron {
+    background-image: url("../../images/toronto.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  }
+
+  .list-group-item {
+    color: black;
+    border:1px solid #010101
+  }
+
+  
