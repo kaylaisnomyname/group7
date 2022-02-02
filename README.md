@@ -102,7 +102,8 @@ In this story , we will visualize:
 
 ### :globe_with_meridians: Website
 
-The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
+The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS, creating links to 
+connect with importants websites and sources.
 
 The link for  the website will be updated later.
 #### Tools 
