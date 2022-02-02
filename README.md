@@ -101,7 +101,8 @@ https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publis
 
 ### WebSite creation 
 
-The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
+The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS, creating links to 
+connect with importants websites and sources.
 
 #### Tools 
 
