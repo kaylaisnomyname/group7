@@ -69,7 +69,7 @@ For more detailed about the Machine Learning Model please click button below
 ## Dashboard:
 
 ### <img src="https://user-images.githubusercontent.com/88597187/151684747-e0141d56-07d6-4f36-bd40-ff6932e6e896.png" width="50" height="50"/> Dashboard Presentation
-
+Google slides [Google Slides](https://docs.google.com/presentation/d/1tis3Y4NxnJhJgd8WlkxADeIJdGZQeWNUWOC0Q9_YSIY/edit)  
 Google Presentation can be seen on : https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf
 
 
