@@ -45,7 +45,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Inez Suyono   : ETL, Develop Database
   - Ivan Coelho   : Develop Database / Visualization
   - Shohesh Patel : Develop Machine Learning
-  - Dana Du       : Manage Repo, ETL, Machine Learning
+  - Xiaodan Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
 
