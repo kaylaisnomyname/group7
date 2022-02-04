@@ -85,8 +85,8 @@ We use Tableau to interactive data visualization with the project to identify so
 #### :diamond_shape_with_a_dot_inside: Bike  Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/ProjectBikeData#2)
 
 
-#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Bike_Weather_Data](https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes)  
-
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Dashboard/Bike_Weather_Data?publish=yes)  
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Story/Bike_Weather_DataStory?publish=yes)
 
 ### :globe_with_meridians: Website:  [website](https://kaylaisnomyname.github.io/group7/)   
 
