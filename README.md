@@ -81,7 +81,7 @@ For more detailed about the Machine Learning Model please click button below
 We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
 
 
-#### :diamond_shape_with_a_dot_inside: Bike  Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeData/Dashboard1?publish=yes)      
+#### :diamond_shape_with_a_dot_inside: Bike  Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/Dashboard1?publish=yes)      
 #### :diamond_shape_with_a_dot_inside: Bike  Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/ProjectBikeData#2)
 
 
