@@ -28,7 +28,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 :large_orange_diamond: Library: Pandas,glob,os,sklearn
 
-:large_orange_diamond: Vizualization: Tableau/HTLM/JS
+:large_orange_diamond: Vizualization: Tableau/HTML/CSS/Bootstrap
 
 
 ### Questions we hope to answer: 
@@ -45,13 +45,11 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Inez Suyono   : ETL, Develop Database
   - Ivan Coelho   : Develop Database / Visualization
   - Shohesh Patel : Develop Machine Learning
-  - Dana Du       : Manage Repo, ETL, Machine Learning
+  - Xiaodan Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
-The  Pre-eliminary Machine Learning Model  will use Random Forest and Linear Regression.
 
 For more detailed about the Machine Learning Model please click button below
-
    
 <a href="https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
@@ -68,11 +66,14 @@ For more detailed about the Machine Learning Model please click button below
 <a href="https://github.com/kaylaisnomyname/group7/tree/Database_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
 
-## Dashboard:
+## Visualization:  
 
 ### <img src="https://user-images.githubusercontent.com/88597187/151684747-e0141d56-07d6-4f36-bd40-ff6932e6e896.png" width="50" height="50"/> Dashboard Presentation
 
-Google Presentation can be seen on : https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf
+#### :diamond_shape_with_a_dot_inside: Google slides: [Google Slides](https://docs.google.com/presentation/d/1tis3Y4NxnJhJgd8WlkxADeIJdGZQeWNUWOC0Q9_YSIY/edit)  
+
+
+#### :diamond_shape_with_a_dot_inside: Google Presentation: [Google_Slides_pdf](https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf)  
 
 
 ### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/> 
@@ -80,37 +81,19 @@ Google Presentation can be seen on : https://github.com/kaylaisnomyname/group7/b
 We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
 
 
-#### :diamond_shape_with_a_dot_inside: Bike  Data
-
-Link : https://public.tableau.com/app/profile/ivan4393/viz/ProjectRawData/Story1?publish=yes
-
-In this story , we will visualize: 
-* Top Starting Station
-* Member Type
-* Average Trip Duration
+#### :diamond_shape_with_a_dot_inside: Bike  Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/Dashboard1?publish=yes)      
+#### :diamond_shape_with_a_dot_inside: Bike  Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/ProjectBikeData#2)
 
 
-#### :diamond_shape_with_a_dot_inside: Bike and Weather Data 
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Dashboard/Bike_Weather_Data?publish=yes)  
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Story/Bike_Weather_DataStory?publish=yes)
 
-Link : https://public.tableau.com/app/profile/ivan4393/viz/Dashboard_16428543063150/Story1?publish=yes
+### :globe_with_meridians: Website:  [website](https://kaylaisnomyname.github.io/group7/)   
 
-In this story , we will visualize: 
-* Average Trip Duration by Year
-* Annual Member and Casual Member
-* Annual Members
-* Weather Temperature 
+ 
 
 
 
-### :globe_with_meridians: Website
-
-The main purpose of creation of the website is practice what we learn through the bootcamp. In this website we used tools to show what we can do with HTML and CSS.
-
-The link for  the website will be updated later.
-#### Tools 
-* HTML
-* CSS
-* Bootstrap
 
 
 
