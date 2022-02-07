@@ -62,7 +62,7 @@ Features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth,
 
 ## New Approach and Result 
 
-After the preliminary result we try to do different approaches to get better result for the target(y) Counts_bike . The new approach can be seen on [machineLearning_Segment3_optimization.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment3_optimization.ipynb).
+After the preliminary result we try to do different approaches to get better result for the target(y) Counts_bike . The new approach can be seen on [machineLearning_Segment3_optimization_2.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment3_optimization.ipynb).
 
 The steps are :
 1.  Add new model 
@@ -78,7 +78,9 @@ We try to explore the decision tree model for the machine learning. We use Count
 
 2.  Eliminate Features
 
-From the Feature importance, we can see that the snow_depth is the least importance features. We eliminate the snow_depth and run the code again for the random forest and decision trees.  From the result we can see that this two model has the same MAE,MSE,RMSE,and R2. The features importance is not much that different, but the overall model score for the random forest(0.777) is better compare to the decision tree(0.537). If we compare with the result before the feature elimination, the score after feature elimination is lower.
+From the Feature importance, we can see that the snow_depth is the least importance features. We eliminate the snow_depth and run the code again for the linear regression, random forest and decision trees.  From the result we can see that random forest and decision trees model has the same MAE,MSE,RMSE,and R2, while the linear regression have higher score for MAE,MSE,RMSE,and R2, but lower score for the R2. 
+
+For the  overall model score  random forest(0.777)  has the best score followed by linear regression(0.757) and decision tree (0.537). If we compare with the result before the feature elimination, the score before  feature elimination is better.
 
 Full result can be seen on table below.
 
@@ -88,6 +90,7 @@ Input (X)= avg temp, avg humid, avg dp, avg wind, air pressure, wind gust
 
 |Approach|MAE|MSE|RMSE|R2|Model Score|Features|
 |---|---|---|---|---|---|---|
+|Linear_Regression |435.616|4286339.084|535.106|0.757|0.748|21.98059841  -36.09301518 -128.96411332   21.35227387 -470.12185838 952.56045789 |
 |Random Forest |162.798|43482.05|208.5235|0.963|0.777|0.72704048 0.04967765 0.03794172 0.05280546 0.0873387  0.04519599 |
 |Decision Trees|162.798|43482.05|208.5235|0.963|0.537|0.70508605 0.05949338 0.02820474 0.0518988  0.09274557 0.06257146|
 
