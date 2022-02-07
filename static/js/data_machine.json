@@ -1,0 +1,1 @@
+[{"Model":"Linear Regression","R2":0.76,"MAE":433.93,"MSE":284447.25,"Model_Score":0.75},{"Model":"Random Forest","R2":0.96,"MAE":160.38,"MSE":42654.64,"Model_Score":0.78}]

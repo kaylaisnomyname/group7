@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="static/css/style.css">
-    <title> Project Group 7</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toronto Bike Sharing Demand Prediction</title>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
-
-<body class="bg-dark">
-
-    <div class="wrapper">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <a class="navbar-brand" href="index.html"><b><u><a href="https://bootcamp.learn.utoronto.ca/data/">Data Analytics Bootcamp UofT</a></u></b></a>
-        </nav>
+<body>
+  <div class="header">
+    <img src="static/images/toronto-bikeshare.jpg" alt="bike_share" style="width:100%;height:50%;">
+    <div class="content">
+      <h1>&nbsp Toronto Bike Sharing Demand Prediction</h1>
     </div>
-    <div class="jumbotron">
-        <h1 class="display-5"> <b>Bike Sharing Demand Prediction</b> </h1>
+  </div> 
+  <div class="topnav">
+    <a class="active" href="index.html">Overview</a>
+    <a href="database.html">Data & Database</a>
+    <a href="machine_learning.html">Machine Learning</a>
+    <a href="about_us.html">About Us</a>
+  </div> 
+  <div class="container-fluid" style="padding: 100px;" >
+    <h2 class="font1">&nbsp "Our goal in this project is to create a viable machine learning model to explore possible correlation(s) between the different types of weather conditions and the demand on bike sharing."</h2>
+  </div>
+  
+
+  <div class="rowin">
+    <div class="columnin">
+      <div class="cardin">
+        <p style="font-size:100px;"><i class="fa fa-github"></i></p>
+        <h3>Our Project Github</h3>
+        <p><a href="https://github.com/kaylaisnomyname/group7">Bike Sharing Toronto</a></p>
+      </div>
     </div>
+    <div class="columnin">
+      <div class="cardin">
+        <p style="font-size:100px;"><i class="fa fa-map-marker"></i></p>
+        <h3>Data Location</h3>
+        <p>Toronto, Ontario, Canada</p>
+      </div>
+    </div>
+    <div class="columnin">
+      <div class="cardin">
+        <p style="font-size:100px;"><i class="fa fa-calendar"></i></p>
+        <h3>Data Timeline</h3>
+        <p>1 January 2019 - 31 December 2021</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="containert">
+    <div class="rowt">
+      <div class="column-33">
+        <p style=" text-align: center;font-family: Arial, Helvetica, sans-serif;font-size: 50px;color:#04AA6D;font-weight: bold;">OUR TOOLS </p>
+        <br>
+        <p style="text-align: center;">
+          <img src="static/images/PG_admin.png" style="width:6%;margin: 10px;"> 
+          <img src="static/images/Sql_data_base_with_logo.png" style="width:8%;margin: 10px;">
+          <img src="static/images/Jupyter notebook.png" style="width:6%;margin: 10px;">
+          <img src="static/images/Pandas logo.png" style="width:10%;margin: 10px;">
+        
+     
+        </p>
+        <p style="text-align: center;">
+          <img src="static/images/Python logo.png" style="width:6%;margin: 10px;">
+          <img src="static/images/html logo.png" style="width:6%;margin: 10px;">
+          <img src="static/images/css.png" style="width:4%;margin: 10px;">
+          <img src="static/images/javascript-logo.png" style="width:4%;margin: 10px;">
+        </p>
+        <p style="text-align: center;">
+          <img src="static/images/tableaulogo_highres.png" style="width:15%;margin: 10px;">
+          <img src="static/images/Google_charts.png" style="width:15%;margin: 10px;">
+          <img src="static/images/parsehub-logo-png-transparent.png" style="width:4%;margin: 10px;">
+          <img src="static/images/sklearn.png" style="width:8%;margin: 10px;">
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <h3> <b><a href="https://github.com/kaylaisnomyname/group7">Project Group 7</a></b> </h3>
-                <small> Participants: Dana Du, Inez Suyono, Ivan Coelho, Shohesh Patel</small>
 
-                <p>
-                    <br><b>Project Scope:</b>
-<br>Location : This Project is based in Toronto
-
-Time Range : 3 years history from 1 January 2019 to 31 December 2021<br>
-
-<br><b>Resources:</b>
-<i><br>Data Source</i>
-Bike Sharing Datasets: Downloaded from an open-source portal CKAN <a href="https://ckan0.cf.opendata.inter.prod-toronto.ca/tr/dataset/bike-share-toronto-ridership-data">(bike)</a>
-<br>Weather Datasets: Scraped from Wunderground <a href="https://www.wunderground.com/history/monthly/ca/toronto/CYTZ">(link)</a> and download from Meteostat <a href="https://meteostat.net/en/station/71624?t=2019-01-01/2021-12-31">(link)</a><br>
-<br><b>Tools:</b><br>
-Software: Jupyter Notebook, PostGreSQL, Parsehub<br>
-Language: Python, SQL<br>
-Library: Pandas, Glob, Os, Sklearn<br>
-Vizualization: Tableau, HTLM, CSS               
-                </p>
-            <img class="img-logo" src="Images/logo.jpg"><br>
-                 <a href="https://bikesharetoronto.com/"> Bike Share Toronto</a>
-            
-            </div>
-            <div class="col-md-8">
-                <p>
-                    Bike sharing is a shared transport service using bike on a short term for a price. 
-                    The sturdy-framed bikes are available at any docking station in the city. The bikes can be taken
-                     from any station and returned to any station in the bike share system. Riders use bike share for
-                      commuting to work or leisure—like running errands, going to appointments or meeting up with friends.
-                      Riders also can use bike to connect to public transportation or just doing exercise for 
-                      exploring the city.<br><br>Weather conditions have considerable influence on cycling travel behavior. 
-                      Our goal in this project is to create a viable machine learning model to explore possible correlation(s) 
-                      between the different types of weather conditions and the demand on bike sharing.
-                </p>
-                <img class="img-df" src="Images/raw_bike_dec_2021_csv_columns.png"> <br><br>
-                
-                <img class="season_w" src="Images/BikeShare.png" > <br><br>
-                
-                <img class="season_w" src="Images/Fall.jpg" >
-
-                <img class="season_w" src="Images/Winter.jpg" >
-
-                <img class="season_w" src="Images/Summer.jpg" >
-
-                
-
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                <p>
-                   
-
-                </p>
-                  
-                </div>
 </body>
-
 </html>
