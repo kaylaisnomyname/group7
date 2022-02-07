@@ -28,20 +28,49 @@
     <a href="about_us.html">About Us</a>
   </div> 
   <div class="tab">
-    <button class="tablinks" title="content_1" onclick="openTab(event, 'Pre_Eliminary')"id="defaultOpen" >Preliminary</button>
+    <button class="tablinks" title="content_1" onclick="openTab(event, 'Preliminary')"id="defaultOpen" >Preliminary</button>
     <button class="tablinks" title="content_2" onclick="openTab(event, 'Result' )"  >Result</button>
     <button class="tablinks" title="content_3" onclick="openTab(event, 'Summary' )" >Summary</button>
   </div>
   
-  <div id="Pre_Eliminary" class="tabcontent col-md-12">
+  <div id="Preliminary" class="tabcontent col-md-12">
     <h3>Preliminary Result</h3>
     <p>There are three possible outcomes: counts_trips, trip_duration, counts_Bike. Four approaches have been made and compared. After comparing, the better target and features set is:</p>
     <ul>
       <li>Target: counts_bike,</li>
       <li>Independent features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point</li>
     </ul>
-    <p>For the preliminary, we compare two model : Linear Regression and Random Forest</p>
+    <p>Preliminary processing models: Linear Regression(LR) and Random Forest(RF)</p>
     <p>As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.</p>
+    <!-- <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="barchart"></div>
+        </div>
+        <div class="col">
+          <div id="barchart2"></div>
+        </div>
+        <div class="col">
+          <div id="barchart3"></div>
+        </div>
+        <div class="col">
+          <div id="barchart4"></div>
+        </div>
+        <div class="col"> <img src="static/images/LR3.JPG" style="width: 500px;;height: 350px;" alt="LR3"></div>
+        <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
+      </div>
+    </div> -->
+    
+    
+    
+    
+     
+   
+  </div>
+  
+  <div id="Result" class="tabcontent col-md-12 ">
     <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
     
     <div class="container">
@@ -62,15 +91,7 @@
         <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
       </div>
     </div>
-    
-    
-    
-    
-     
-   
-  </div>
-  
-  <div id="Result" class="tabcontent col-md-12 ">
+
      
     
   </div>
