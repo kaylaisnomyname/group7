@@ -49,6 +49,10 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 ## Machine Learning Model:  
 
+Best R2 score and model score so far:  
+![best_yet_model_report](https://github.com/kaylaisnomyname/group7/blob/main/Images/RandomForestReport_seg3.png?raw=true)  
+
+
 For more detailed about the Machine Learning Model please click button below
    
 <a href="https://github.com/kaylaisnomyname/group7/tree/Machine_learning_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
