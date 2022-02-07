@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toronto Bike Sharing Demand Prediction</title>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+  <div class="header">
+    <img src="static/images/toronto-bikeshare.jpg" alt="bike_share" style="width:100%;height:50%;">
+    <div class="content">
+      <h1>&nbsp Toronto Bike Sharing Demand Prediction</h1>
+    </div>
+  </div> 
+  <div class="topnav">
+    <a  href="index.html">Overview</a>
+    <a  href="database.html">Data & Database</a>
+    <a class="active" href="machine_learning.html">Machine Learning</a>
+    <a href="about_us.html">About Us</a>
+  </div> 
+  <div class="tab">
+    <button class="tablinks" title="content_1" onclick="openTab(event, 'Pre_Eliminary')"id="defaultOpen" >Pre Eliminary</button>
+    <button class="tablinks" title="content_2" onclick="openTab(event, 'Result' )"  >Result</button>
+    <button class="tablinks" title="content_3" onclick="openTab(event, 'Summary' )" >Summary</button>
+  </div>
+  
+  <div id="Pre_Eliminary" class="tabcontent col-md-12">
+    <h3>Pre- Eliminary Result</h3>
+    <p>There are three possible outcomes: counts_trips, trip_duration, counts_Bike. Four approaches have been made and compared. After comparing, the better target and features set is:</p>
+    <ul>
+      <li>Target: counts_bike,</li>
+      <li>Independent features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point</li>
+    </ul>
+    <p>For the pre-eliminary, we compare two model : Linear Regression and Random Forest</p>
+    <p>As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.</p>
+    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="barchart"></div>
+        </div>
+        <div class="col">
+          <div id="barchart2"></div>
+        </div>
+        <div class="col">
+          <div id="barchart3"></div>
+        </div>
+        <div class="col">
+          <div id="barchart4"></div>
+        </div>
+        <div class="col"> <img src="static/images/LR3.JPG" style="width: 500px;;height: 350px;" alt="LR3"></div>
+        <div class="col"><img src="static/images/RF3.JPG"  style="width: 500px;;height: 350px;" alt="RF3"></div>
+      </div>
+    </div>
+    
+    
+    
+    
+     
+   
+  </div>
+  
+  <div id="Result" class="tabcontent col-md-12 ">
+     
+    
+  </div>
+  
+  <div id="Summary" class="tabcontent col-md-12">
+ 
+
+  </div> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script src="static/js/data_machine.json"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+  
+  
+ 
+</body>
+</html>
