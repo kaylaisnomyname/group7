@@ -85,10 +85,23 @@ For future analysis, we suggest:
 #### :diamond_shape_with_a_dot_inside: Google Presentation: [Google_Slides_pdf](https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf)  
 
 
+
 ### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/>  and :globe_with_meridians: Website
 
 
 <a href="https://kaylaisnomyname.github.io/group7/">![Website](https://img.shields.io/badge/-CLICK%20FOR%20WEBSITE-blue?style=for-the-badge)</a>
+### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/> 
+
+We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
+
+
+#### :diamond_shape_with_a_dot_inside: Bike  Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataDashboard/DashboardBikeData?publish=yes)      
+#### :diamond_shape_with_a_dot_inside: Bike  Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/ProjectBikeDataStory/ProjectBikeData#2)
+
+
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/Bike-WeatherDashboard/Bike_Weather_Data?publish=yes)  
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Story/Bike_Weather_DataStory?publish=yes)
+
 
 
  
