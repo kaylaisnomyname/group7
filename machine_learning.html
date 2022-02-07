@@ -42,7 +42,8 @@
     </ul>
     <p>Preliminary processing models: Linear Regression(LR) and Random Forest(RF)</p>
     <p>As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.</p>
-    <!-- <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
+    
+    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
     
     <div class="container">
       <div class="row">
@@ -61,7 +62,7 @@
         <div class="col"> <img src="static/images/LR3.JPG" style="width: 500px;;height: 350px;" alt="LR3"></div>
         <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
       </div>
-    </div> -->
+    </div> 
     
     
     
@@ -71,30 +72,18 @@
   </div>
   
   <div id="Result" class="tabcontent col-md-12 ">
+    <br>
+    <br>
     <p>From the approaches we have been done and compared it to the preliminary result, we can summarize that the best model for the bike demand prediction is the Random Forest with the 7 features( average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point) and target counts_bike.</p>
     <br>
-    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
+    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features for Random Forest</p>
     
+    
+    <div class="col"><img src="static/images/Rf_residual_plot.png"  style="width: 500px;;height: 350px;" alt="RF3"></div>
     <div class="col"><img src="static/images/Rf_scatter_plot.png"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div id="barchart"></div>
-        </div>
-        <div class="col">
-          <div id="barchart2"></div>
-        </div>
-        <div class="col">
-          <div id="barchart3"></div>
-        </div>
-        <div class="col">
-          <div id="barchart4"></div>
-        </div>
-        <div class="col"> <img src="static/images/LR3.JPG" style="width: 500px;;height: 350px;" alt="LR3"></div>
-        <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-      </div>
-    </div>
-
+    <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
+    
+    
      
     
   </div>
