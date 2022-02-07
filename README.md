@@ -1,6 +1,7 @@
 # Toronto Bike Sharing Demand Prediction 
 
-## Machine Learning Model:  
+## Machine Learning Model: 
+## Preliminary 
 1. Preliminary data preprocessing:  
 Raw datasets consist of bike checkout logs and daily weather conditions. Raw bike dataset is first grouped by date and then joined with weather dataset by date to form a new dataframe. All Nan values, such as depth of snow, are filled by zero since the minimum value of the snow depth is zero. The cleaned dataset is then ensured with no duplicates or NaN values. Data preprocessing details are shown in Weather_Data_ETL.ipynb and Bike_data_ETL.ipynb.  
 
@@ -57,5 +58,38 @@ Features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth,
 
 
 
-:inbox_tray:  The full process can be seen on [machineLearning_Segment2.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment2.ipynb)
+:inbox_tray:  The full process for preliminary  can be seen on [machineLearning_Segment2.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment2.ipynb)
 
+## New Approach and Result 
+
+After the preliminary result we try to do different approaches to get better result for the target(y) Counts_bike . The new approach can be seen on [machineLearning_Segment3_optimization.ipynb](https://github.com/kaylaisnomyname/group7/blob/Machine_learning_main/Codes/machineLearning_Segment3_optimization.ipynb).
+
+The steps are :
+1.  Add new model 
+
+We try to explore the decision tree model for the machine learning. We use Counts_bike as the target and weather data(average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point) for the input(X).  After we split and train the model , the result for R2 is 0.96377 with overall model score 0.573. This score is more lower than the Random forest model that we do in the preliminary step.  The full result and the features important can be seen below.
+
+|Approach|Output(y)|Input(X)|MAE|MSE|RMSE|R2|Model Score|Features|
+|---|---|---|---|---|---|---|---|---|
+|1|Counts_bike|Weather Data|160.38|42654.64|206.53|0.96377|0.573|0.705699   0.0572998  0.028832   0.04761139 0.00846358 0.08907662 0.0630176 |
+
+
+<img width="546" alt="DT3" src="https://user-images.githubusercontent.com/88597187/152836698-4825a4b7-3622-47b4-9c34-d0c96c2b4a77.png">
+
+2.  Eliminate Features
+
+From the Feature importance, we can see that the snow_depth is the least importance features. We eliminate the snow_depth and run the code again for the random forest and decision trees.  From the result we can see that this two model has the same MAE,MSE,RMSE,and R2. The features importance is not much that different, but the overall model score for the random forest(0.777) is better compare to the decision tree(0.537). If we compare with the result before the feature elimination, the score after feature elimination is lower.
+
+Full result can be seen on table below.
+
+Output(y)= Counts_bike
+
+Input (X)= avg temp, avg humid, avg dp, avg wind, air pressure, wind gust
+
+|Approach|MAE|MSE|RMSE|R2|Model Score|Features|
+|---|---|---|---|---|---|---|
+|Random Forest |162.798|43482.05|208.5235|0.963|0.777|0.72704048 0.04967765 0.03794172 0.05280546 0.0873387  0.04519599 |
+|Decision Trees|162.798|43482.05|208.5235|0.963|0.537|0.70508605 0.05949338 0.02820474 0.0518988  0.09274557 0.06257146|
+
+
+From the approaches we  have been done and  compared it to the preliminary result,  we can summarize that the best model for the bike demand prediction is the Random Forest with the 7 features( average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point)  and target counts_bike. 
