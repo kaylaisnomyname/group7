@@ -1,0 +1,7 @@
+Model,Feature,MAE,MSE,RMSE,R2,Model Score
+Linear Regression ,ALL,433.93,284447.25,533.33,0.76,0.75
+Random Forest,ALL,160.38,42654.64,206.53,0.96,0.78
+Decision Tree,ALL,160.38,42654.64,206.53,0.96377,0.573
+Linear Regression ,Without Snow_Depth,435.616,4286339.084,535.106,0.757,0.748
+Random Forest,Without Snow_Depth,162.798,43482.05,208.5235,0.963,0.777
+Decision Tree,Without Snow_Depth,162.798,43482.05,208.5235,0.963,0.537
