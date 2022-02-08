@@ -36,7 +36,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 * How weather conditions affect the demand of bike sharing in Toronto?
 * Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
 * Suggestions for next business strategy.  
-
+  
+    Assessing ridership on a monthly as to annual level to factor in the influence of seasonality and weather.
 
 
 ## Group communication protocols:
@@ -48,6 +49,10 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Xiaodan Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
+
+Best R2 score and model score so far:  
+![best_yet_model_report](https://github.com/kaylaisnomyname/group7/blob/main/Images/RandomForestReport_seg3.png?raw=true)  
+
 
 For more detailed about the Machine Learning Model please click button below
    
@@ -67,11 +72,9 @@ For more detailed about the Machine Learning Model please click button below
 
 
 ## Suggestion for Future Analysis
-For future analysis, we suggest:
+For future analysis, 
 
-### :large_orange_diamond: Use another model for prediction 
-
-### :large_orange_diamond: 
+:large_orange_diamond:  to be fiilled
 
 
 
@@ -86,10 +89,7 @@ For future analysis, we suggest:
 
 
 
-### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/>  and :globe_with_meridians: Website
-
-
-<a href="https://kaylaisnomyname.github.io/group7/">![Website](https://img.shields.io/badge/-CLICK%20FOR%20WEBSITE-blue?style=for-the-badge)</a>
+:globe_with_meridians: Website  <a href="https://kaylaisnomyname.github.io/group7/">![Website](https://img.shields.io/badge/-CLICK%20FOR%20WEBSITE-blue?style=for-the-badge)</a>  
 ### <img src="https://user-images.githubusercontent.com/88597187/151684727-2deeb082-b5fc-42ea-9825-2162591f3614.png" width="150" height="30"/> 
 
 We use Tableau to interactive data visualization with the project to identify some relevant points. We transform the way we see the data to solves those problems below.
