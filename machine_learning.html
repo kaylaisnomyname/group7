@@ -30,74 +30,135 @@
   <div class="tab">
     <button class="tablinks" title="content_1" onclick="openTab(event, 'Preliminary')"id="defaultOpen" >Preliminary</button>
     <button class="tablinks" title="content_2" onclick="openTab(event, 'Result' )"  >Result</button>
-    <button class="tablinks" title="content_3" onclick="openTab(event, 'Summary' )" >Summary</button>
   </div>
   
-  <div id="Preliminary" class="tabcontent col-md-12">
+  <div id="Preliminary" class="tabcontent">
     <h3>Preliminary Result</h3>
-    <p>There are three possible outcomes: counts_trips, trip_duration, counts_Bike. Four approaches have been made and compared. After comparing, the better target and features set is:</p>
+    <p>There are three possible outcomes: counts_trips, trip_duration, counts_Bike. Four approaches have been made to compared between the target and model </p>
+    <p>Preliminary processing models: Linear Regression(LR) and Random Forest(RF)</p>
+    <p>Although there were 4 approaches, we will focused mainly on the last 3 approaches, because the first one has features other than weather data. </p>
+    <ul>
+      <li>Approach 2: output = trip_duration</li>
+      <li>Approach 3: output = counts_bike</li>
+      <li>Approach 4: output = counts_trip</li>
+      <li>Features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point</li>
+    </ul>
+    <p>As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.</p>
+    <p>After comparing, the better target and features set is:</p>
     <ul>
       <li>Target: counts_bike,</li>
       <li>Independent features: average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point</li>
     </ul>
-    <p>Preliminary processing models: Linear Regression(LR) and Random Forest(RF)</p>
-    <p>As per results of the four approaches, LR has much larger mse(mean squared error) and mae(mean absolute error) and somewhat smaller R2 scores comparing to RF, which coincides to the characteristics of the models.</p>
+    <p> The  metric and feature importance comparison can be seen below </p>
+
+  
+    <div id="myBtnContainer" style="margin-left: 10px;">
+      <!-- <button class="btn active" onclick="filterSelection('all')"> Show all</button> -->
+      <button class="btn" onclick="filterSelection('Pre_metric')"> Metric</button>
+      <button class="btn" onclick="filterSelection('f_importance_lr')">Feature Importance Linear Regression</button>
+      <button class="btn" onclick="filterSelection('f_importance_rf')">Feature Importance Random Forest</button>
+    </div>
     
-    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features</p>
-    
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div id="barchart"></div>
-        </div>
-        <div class="col">
-          <div id="barchart2"></div>
-        </div>
-        <div class="col">
-          <div id="barchart3"></div>
-        </div>
-        <div class="col">
-          <div id="barchart4"></div>
-        </div>
-        <div class="col"> <img src="static/images/LR3.JPG" style="width: 500px;;height: 350px;" alt="LR3"></div>
-        <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
+    <div class="containerdtab" >
+      <div class="filterDiv Pre_metric" style="width:50%;height: 100%;" > Metric <br> 
+        <div class='tableauPlaceholder' id='viz1644300409240' style='position: relative'><object class='tableauViz'  style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+          <param name='embed_code_version' value='3' /> 
+          <param name='site_root' value='' />
+          <param name='name' value='PreliminaryMachineLearning&#47;MetricComparison' />
+          <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' /></object>
+        </div>                
+          <script type='text/javascript'>                    
+          var divElement = document.getElementById('viz1644300409240');                    
+          var vizElement = divElement.getElementsByTagName('object')[0];                    
+          if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1100px';vizElement.style.height='727px';} 
+          else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1100px';vizElement.style.height='727px';} 
+          else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
+          var scriptElement = document.createElement('script');                    
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       </div>
-    </div> 
-    
-    
-    
-    
-     
-   
+      <div class="filterDiv f_importance_lr" >Feature Importance Linear Regression <br> 
+        <img class="img-df" src="static/images/lr2.jpg" width="50%">
+        <img class="img-df" src="static/images/LR3.JPG" width="50%">
+        <img class="img-df" src="static/images/LR4.jpg" width="50%">
+      </div>
+      <div class="filterDiv f_importance_rf" >Feature Importance Random Forest <br> 
+        <img class="img-df" src="static/images/rf2.jpg" width="50%">
+        <img class="img-df" src="static/images/RF3.jpg" width="50%">
+        <img class="img-df" src="static/images/RF4.jpg" width="50%">
+      </div>
+    </div>
+
+
+
   </div>
   
   <div id="Result" class="tabcontent col-md-12 ">
-    <br>
-    <br>
+    <h3>Final Result</h3>
+    <p>After the preliminary result we try to do different approaches to get better result for the target(y) Counts_bike</p>
+    <ul>
+      <li>Add new model</li>
+      <p>We try to explore the decision tree model for the machine learning. We use Counts_bike as the target and weather data(average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point) for the input(X). After we split and train the model , the result for R2 is 0.96377 with overall model score 0.573. This score is more lower than the Random forest model that we do in the preliminary step.</p>  
+      <li>Eliminate Features</li>
+      <p>From the Feature importance, we can see that the snow_depth is the least importance features. We eliminate the snow_depth and run the code again for the linear regression, random forest and decision trees. From the result we can see that random forest and decision trees model has the same MAE,MSE,RMSE,and R2, while the linear regression have higher score for MAE,MSE,RMSE,and R2, but lower score for the R2.</p>
+    </ul>
     <p>From the approaches we have been done and compared it to the preliminary result, we can summarize that the best model for the bike demand prediction is the Random Forest with the 7 features( average_temp, average_wind_speed, wind_gust, air_pressure, snow_depth, average_humid, average_dew_point) and target counts_bike.</p>
     <br>
-    <p>Below is the metric result and feature importance for the selected target (counts_bike) and the independent features for Random Forest</p>
+    <p>Below is the metric result and graph comparison between model, we add residual plot to show that our residual normally distributed and we add the scatter plot to show  how our model is performing</p>
+    
+    <div id="myBtnContainer" style="margin-left: 10px;">
+      <!-- <button class="btn active" onclick="filterSelection('all')"> Show all</button> -->
+      <button class="btn" onclick="filterSelection('R_metric')"> Metric Comparison</button>
+      <button class="btn" onclick="filterSelection('Residual_plot')">Residual Plot</button>
+      <button class="btn" onclick="filterSelection('Scatter_plot')">Actual vs Predicted Scatter Plot</button>
+      <button class="btn" onclick="filterSelection('Feature_count')">Features vs Count Bike</button>
+    </div>
+    
+    <div class="containerdtab" >
+      <div class="filterDiv R_metric" style="width:50%" > Metric Comparison <br> 
+        <div class='tableauPlaceholder' id='viz1644340851242' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MachineLearningDashboard&#47;MachineLearning' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1644340851242');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      </div>
+      <div class="filterDiv Residual_plot" >Residual Plot <br> 
+        <img class="img-df" src="static/images/rp_lr_6.png" width="50%">
+        <img class="img-df" src="static/images/rp_lr_7.png" width="50%">
+        <img class="img-df" src="static/images/rp_rf_6.png" width="50%">
+        <img class="img-df" src="static/images/rp_rf_7.png" width="50%">
+        <img class="img-df" src="static/images/rp_dt_6.png" width="50%">
+        <img class="img-df" src="static/images/rp_dt_7.png" width="50%">
+
+      </div>
+      <div class="filterDiv Scatter_plot" >Actual vs Predicted Scatter Plot <br> 
+        <img class="img-df" src="static/images/sp_lr_6.png" width="50%">
+        <img class="img-df" src="static/images/sp_lr_7.png" width="50%">
+        <img class="img-df" src="static/images/sp_rf_6.png" width="50%">
+        <img class="img-df" src="static/images/sp_rf_7.png" width="50%">
+        <img class="img-df" src="static/images/sp_dt_6.png" width="50%">
+        <img class="img-df" src="static/images/sp_dt_7.png" width="50%">
+      </div>
+      <div class="filterDiv Feature_count"  style="width:90%" >Features vs Count Bike <br> 
+        <div class='tableauPlaceholder' id='viz1644340905452' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BikeXFeaturesDashboard&#47;BikeXFeatures' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1644340905452');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1500px';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1500px';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      </div>
+    </div>
+
     
     
-    <div class="col"><img src="static/images/Rf_result.png"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-    <div class="col"><img src="static/images/Rf_residual_plot.png"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-    <div class="col"><img src="static/images/Rf_scatter_plot.png"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-    <div class="col"><img src="static/images/RF3.jpg"  style="width: 500px;;height: 350px;" alt="RF3"></div>
-    
-    
-     
     
   </div>
   
-  <div id="Summary" class="tabcontent col-md-12">
- 
-
-  </div> 
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-  <script src="static/js/data_machine.json"></script>
   <script src="static/js/data.js"></script>
   <script src="static/js/app.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script src="static/js/data_machine.json"></script>
   
   
  
