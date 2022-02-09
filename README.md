@@ -28,7 +28,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 :large_orange_diamond: Library: Pandas,glob,os,sklearn
 
-:large_orange_diamond: Vizualization: Tableau/HTML/CSS/Bootstrap
+:large_orange_diamond: Visualization: Tableau/HTML/CSS/Bootstrap/Javascript
 
 
 ### Questions we hope to answer: 
