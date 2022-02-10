@@ -28,7 +28,7 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 
 :large_orange_diamond: Library: Pandas,glob,os,sklearn
 
-:large_orange_diamond: Vizualization: Tableau/HTML/CSS/Bootstrap
+:large_orange_diamond: Visualization: Tableau/HTML/CSS/Bootstrap/Javascript
 
 
 ### Questions we hope to answer: 
@@ -36,7 +36,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 * How weather conditions affect the demand of bike sharing in Toronto?
 * Which weather condition(s) or feature(s) is having the most impact on the demand of bike sharing in Toronto? 
 * Suggestions for next business strategy.  
-
+  
+    Assessing ridership on a monthly as to annual level to factor in the influence of seasonality and weather.
 
 
 ## Group communication protocols:
