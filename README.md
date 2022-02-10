@@ -49,6 +49,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
   - Xiaodan Du       : Manage Repo, ETL, Machine Learning
 
 ## Machine Learning Model:  
+Result model scores and R2 scores:  
+![result](https://github.com/kaylaisnomyname/group7/blob/main/Images/model_score_R2_score_result.png?raw=true)  
 
 Best R2 score and model score so far:  
 ![best_yet_model_report](https://github.com/kaylaisnomyname/group7/blob/main/Images/RandomForestReport_seg3.png?raw=true)  
