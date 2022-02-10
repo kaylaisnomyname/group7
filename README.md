@@ -80,8 +80,7 @@ For more detailed about the Machine Learning Model please click button below
 #### :diamond_shape_with_a_dot_inside: Google slides: [Google Slides](https://docs.google.com/presentation/d/1tis3Y4NxnJhJgd8WlkxADeIJdGZQeWNUWOC0Q9_YSIY/edit)  
 
 
-#### :diamond_shape_with_a_dot_inside: Google Presentation: [Google_Slides_pdf](https://github.com/kaylaisnomyname/group7/blob/main/Dashboard.pdf)  
-
+#### :diamond_shape_with_a_dot_inside: Google Presentation: [Google_Slides_pdf](https://github.com/kaylaisnomyname/group7/blob/main/group7-Toronto%20Bike%20Sharing%20Demand%20Prediction.pdf)    
 
 
 :globe_with_meridians: Website  <a href="https://kaylaisnomyname.github.io/group7/">![Website](https://img.shields.io/badge/-CLICK%20FOR%20WEBSITE-blue?style=for-the-badge)</a>  
