@@ -52,6 +52,8 @@ Weather conditions have considerable influence on cycling travel behavior. Our g
 Best R2 score and model score so far:  
 ![best_yet_model_report](https://github.com/kaylaisnomyname/group7/blob/main/Images/RandomForestReport_seg3.png?raw=true)  
 
+Feature importance chart:  
+![result_chart](https://user-images.githubusercontent.com/88597187/151683713-b971f832-69ca-49d4-a8f5-7fdb2b134778.jpg)  
 
 For more detailed about the Machine Learning Model please click button below
    
@@ -65,15 +67,8 @@ For more detailed about the Machine Learning Model please click button below
  For more detailed about ETL Process and Database please click button below
 
 
-
-   
 <a href="https://github.com/kaylaisnomyname/group7/tree/Database_main"> ![More Detail](https://img.shields.io/badge/-DETAILS%20>>-brightgreen?style=for-the-badge)</a>
 
-
-## Suggestion for Future Analysis
-For future analysis, 
-
-:large_orange_diamond:  to be fiilled
 
 
 
@@ -99,10 +94,17 @@ We use Tableau to interactive data visualization with the project to identify so
 
 
 #### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Dashboard](https://public.tableau.com/app/profile/ivan4393/viz/Bike-WeatherDashboard/Bike_Weather_Data?publish=yes)  
-#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Story/Bike_Weather_DataStory?publish=yes)
+#### :diamond_shape_with_a_dot_inside: Bike and Weather Data: [Story](https://public.tableau.com/app/profile/ivan4393/viz/Bike-Weather-Story/Bike_Weather_DataStory?publish=yes)    
+  
 
 
 
+## Suggestion for Future Analysis:
+ 
+  - to futher improve accuracy:  
+    - try different decision tree models, such as BaggingRegressor, ExtraTreeRegressor, and AdaBoostRegressor
+    - add more weather features into fitting dataset
+  - Prediction equation : eventurally come up with a prediction equation which takes in the weather conditions and estimates the demand of bikes.  
  
 
 
